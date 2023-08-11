@@ -31,13 +31,13 @@ BEGIN
     BEGIN
         BLOCK "040904B0"
         BEGIN
-            VALUE "CompanyName",      "The qBittorrent Project"
-            VALUE "FileDescription",  "qBittorrent - A Bittorrent Client"
+            VALUE "CompanyName",      "GunzillaGames"
+            VALUE "FileDescription",  "Gunzilla qBittorrent"
             VALUE "FileVersion",      VER_FILEVERSION_STR
-            VALUE "InternalName",     "qbittorrent"
+            VALUE "InternalName",     "Gunzilla_qbittorrent"
             VALUE "LegalCopyright",   "Copyright ©2006-2022 The qBittorrent Project"
-            VALUE "OriginalFilename", "qbittorrent.exe"
-            VALUE "ProductName",      "qBittorrent"
+            VALUE "OriginalFilename", "Gunzilla_qbittorrent.exe"
+            VALUE "ProductName",      "Gunzilla_qbittorrent"
             VALUE "ProductVersion",   VER_PRODUCTVERSION_STR
         END
     END

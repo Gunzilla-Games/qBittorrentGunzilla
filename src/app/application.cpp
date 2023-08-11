@@ -102,6 +102,10 @@
 #include "webui/webui.h"
 #endif
 
+//~Gunzilla
+#include <QFileInfo>
+//~Gunzilla
+
 namespace
 {
 #define SETTINGS_KEY(name) u"Application/" name
@@ -144,8 +148,8 @@ Application::Application(int &argc, char **argv)
     qRegisterMetaType<Log::Msg>("Log::Msg");
     qRegisterMetaType<Log::Peer>("Log::Peer");
 
-    setApplicationName(u"qBittorrent"_qs);
-    setOrganizationDomain(u"qbittorrent.org"_qs);
+    setApplicationName(u"GunzillaqBittorrent"_qs);
+    setOrganizationDomain(u"gunzillagames.com"_qs);
 #if !defined(DISABLE_GUI)
     setDesktopFileName(u"org.qbittorrent.qBittorrent"_qs);
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
@@ -158,7 +162,11 @@ Application::Application(int &argc, char **argv)
     Logger::initInstance();
 
     const auto portableProfilePath = Path(QCoreApplication::applicationDirPath()) / DEFAULT_PORTABLE_MODE_PROFILE_DIR;
-    const bool portableModeEnabled = m_commandLineArgs.profileDir.isEmpty() && portableProfilePath.exists();
+    bool portableModeEnabled = m_commandLineArgs.profileDir.isEmpty() && portableProfilePath.exists();
+
+    //~Gunzilla
+    portableModeEnabled = true;
+    //~Gunzilla
 
     const Path profileDir = portableModeEnabled
         ? portableProfilePath
@@ -170,6 +178,23 @@ Application::Application(int &argc, char **argv)
 
     SettingsStorage::initInstance();
     Preferences::initInstance();
+
+    //~Gunzilla
+    {
+        Preferences *const pref = Preferences::instance();
+        pref->setAcceptedLegal(true);
+        pref->setNeverCheckFileAssoc(true);
+        pref->setDeleteTorrentFilesAsDefault(true);
+
+        if (m_commandLineArgs.unzip)
+            pref->setAutoUnzipTorrent(true);
+        if (!m_commandLineArgs.savePath.isEmpty())
+        {
+            pref->setWatchFolder(m_commandLineArgs.savePath);
+        }
+        m_commandLineArgs.torrentingPort = 15500;
+    }
+    //~Gunzilla
 
     initializeTranslation();
 
@@ -541,6 +566,10 @@ void Application::torrentFinished(const BitTorrent::Torrent *torrent)
 {
     const Preferences *pref = Preferences::instance();
 
+    //~Gunzilla
+    handleTorrentFinished(torrent);
+    //~Gunzilla
+
     // AutoRun program
     if (pref->isAutoRunOnTorrentFinishedEnabled())
         runExternalProgram(pref->getAutoRunOnTorrentFinishedProgram().trimmed(), torrent);
@@ -659,6 +688,11 @@ Application::AddTorrentParams Application::parseParams(const QStringList &params
         }
 
         parsedParams.torrentSource = param;
+
+        //~Gunzilla
+        parsedParams.torrentParams.source = parsedParams.torrentSource;
+        //~Gunzilla
+
         break;
     }
 
@@ -678,6 +712,7 @@ void Application::processParams(const AddTorrentParams &params)
         AddNewTorrentDialog::show(params.torrentSource, params.torrentParams, m_window);
     else
 #endif
+
         BitTorrent::Session::instance()->addTorrent(params.torrentSource, params.torrentParams);
 }
 
@@ -1213,3 +1248,96 @@ void Application::cleanup()
         Utils::Misc::shutdownComputer(m_shutdownAct);
     }
 }
+
+//~Gunzilla
+void Application::handleTorrentFinished(const BitTorrent::Torrent* torrent) const
+{
+    QString sourceFile = torrent->sourceFile();
+
+    Preferences* const pref = Preferences::instance();
+    if (pref->isAutoUnzipTorrent())
+    {
+        unzipTorrent(torrent);
+    }
+
+    // Write .done file
+    {
+        QString doneFile = sourceFile + QString(u".done"_qs);
+        QFile file(doneFile);
+        if (file.open(QIODevice::WriteOnly | QIODevice::Text))
+        {
+            QTextStream stream(&file);
+            stream << u"done"_qs;
+            file.close();
+        }
+        Utils::Fs::removeFile(Path(sourceFile + QString(u".progress"_qs)));
+    }
+}
+
+void Application::unzipTorrent(const BitTorrent::Torrent *torrent) const
+{
+    QString saveDir = torrent->savePath().toString();
+    QString torrentFilename = torrent->name();
+
+    QFileInfo torrentFileInfo(torrent->name());
+    QString unzipDir = torrentFileInfo.baseName();
+
+    QString program = QString::fromWCharArray(L"7zG.exe x -mmt=on -y \"%1\\%2\" -o\"%1\\%3\"").arg(saveDir, torrentFilename, unzipDir);
+    //runExternalProgram(cmdline,torrent);
+
+    const QString logMsg = tr("Running external program. Torrent: \"%1\". Command: `%2`");
+
+#if defined(Q_OS_WIN)
+    const std::wstring programWStr = program.toStdWString();
+
+    // Need to split arguments manually because QProcess::startDetached(QString)
+    int argCount = 0;
+    std::unique_ptr<LPWSTR[], decltype(&::LocalFree)> args{ ::CommandLineToArgvW(programWStr.c_str(), &argCount), ::LocalFree };
+
+    if (argCount <= 0)
+        return;
+
+    QStringList argList;
+    for (int i = 1; i < argCount; ++i)
+        argList += QString::fromWCharArray(args[i]);
+
+    LogMsg(logMsg.arg(torrent->name(), program));
+
+    QProcess proc;
+
+    connect(&proc, (void(QProcess::*)(int)) & QProcess::finished, [=] {
+        LogMsg(QString::fromWCharArray(L"UNZIP FINISHED!!!"));
+        }
+    );
+
+    proc.setProgram(QString::fromWCharArray(args[0]));
+    proc.setArguments(argList);
+
+    proc.setCreateProcessArgumentsModifier([](QProcess::CreateProcessArguments* args)
+        {
+            if (Preferences::instance()->isAutoRunConsoleEnabled())
+            {
+                args->flags |= CREATE_NEW_CONSOLE;
+                args->flags &= ~(CREATE_NO_WINDOW | DETACHED_PROCESS);
+            }
+            else
+            {
+                args->flags |= CREATE_NO_WINDOW;
+                args->flags &= ~(CREATE_NEW_CONSOLE | DETACHED_PROCESS);
+            }
+            args->inheritHandles = false;
+            args->startupInfo->dwFlags &= ~STARTF_USESTDHANDLES;
+            ::CloseHandle(args->startupInfo->hStdInput);
+            ::CloseHandle(args->startupInfo->hStdOutput);
+            ::CloseHandle(args->startupInfo->hStdError);
+            args->startupInfo->hStdInput = nullptr;
+            args->startupInfo->hStdOutput = nullptr;
+            args->startupInfo->hStdError = nullptr;
+        });
+
+
+    proc.startDetached();
+    //proc.start();
+#endif // Q_OS_WIN
+}
+//~Gunzilla

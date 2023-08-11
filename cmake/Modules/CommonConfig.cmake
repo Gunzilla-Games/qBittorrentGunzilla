@@ -82,6 +82,7 @@ endif()
 
 if (MSVC)
     target_compile_options(qbt_common_cfg INTERFACE
+        /MP
         /guard:cf
         /utf-8
         # https://devblogs.microsoft.com/cppblog/msvc-now-correctly-reports-__cplusplus/

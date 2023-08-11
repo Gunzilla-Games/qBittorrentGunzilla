@@ -45,6 +45,7 @@ namespace BitTorrent
 
     struct AddTorrentParams
     {
+        QString source; //~Gunzilla
         QString name;
         QString category;
         TagSet tags;

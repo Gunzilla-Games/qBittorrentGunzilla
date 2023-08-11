@@ -347,5 +347,12 @@ namespace BitTorrent
         int m_uploadLimit = 0;
 
         mutable QBitArray m_pieces;
+
+        //~Gunzilla
+        QString m_sourceFile;
+public:
+        QString sourceFile() const override { return m_sourceFile; };
+private:
+        //~Gunzilla
     };
 }

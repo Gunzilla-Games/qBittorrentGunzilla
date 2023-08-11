@@ -324,6 +324,10 @@ namespace BitTorrent
 
         void toggleSequentialDownload();
         void toggleFirstLastPiecePriority();
+
+        //~Gunzilla
+        virtual QString sourceFile() const = 0;
+        //~Gunzilla
     };
 }
 

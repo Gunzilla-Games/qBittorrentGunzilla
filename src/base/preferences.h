@@ -33,8 +33,12 @@
 #include <QtGlobal>
 #include <QObject>
 
+#include <QObject>
+
 #include "base/pathfwd.h"
 #include "base/utils/net.h"
+
+#include "base/path.h" //~Gunzilla
 
 class QDateTime;
 class QNetworkCookie;
@@ -414,4 +418,15 @@ signals:
 
 private:
     static Preferences *m_instance;
+
+
+    //~Gunzilla
+public:
+    bool isAutoUnzipTorrent() const;
+    void setAutoUnzipTorrent(const bool enabled);
+    void setWatchFolder(const Path dir);
+    Path getWatchFolder();
+    Path m_watchFolder;
+private:
+    //~Gunzilla
 };

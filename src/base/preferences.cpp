@@ -988,7 +988,7 @@ void Preferences::resolvePeerCountries(const bool resolve)
 
 bool Preferences::resolvePeerHostNames() const
 {
-    return value(u"Preferences/Connection/ResolvePeerHostNames"_qs, false);
+    return value(u"Preferences/Connection/ResolvePeerHostNames"_qs, true); //~Gunzilla
 }
 
 void Preferences::resolvePeerHostNames(const bool resolve)
@@ -1049,6 +1049,10 @@ bool Preferences::isMagnetLinkAssocSet()
 
 void Preferences::setTorrentFileAssoc(const bool set)
 {
+    //~Gunzilla
+    return;
+    //~Gunzilla
+
     QSettings settings(u"HKEY_CURRENT_USER\\Software\\Classes"_qs, QSettings::NativeFormat);
 
     // .Torrent association
@@ -1069,6 +1073,10 @@ void Preferences::setTorrentFileAssoc(const bool set)
 
 void Preferences::setMagnetLinkAssoc(const bool set)
 {
+    //~Gunzilla
+    return;
+    //~Gunzilla
+
     QSettings settings(u"HKEY_CURRENT_USER\\Software\\Classes"_qs, QSettings::NativeFormat);
 
     // Magnet association
@@ -1643,3 +1651,27 @@ void Preferences::apply()
     if (SettingsStorage::instance()->save())
         emit changed();
 }
+
+
+//~Gunzilla
+bool Preferences::isAutoUnzipTorrent() const
+{
+    return value(u"AutoRun/unzip"_qs, false);
+}
+
+
+void Preferences::setAutoUnzipTorrent(const bool enabled)
+{
+    setValue(u"AutoRun/unzip"_qs, enabled);
+}
+
+void Preferences::setWatchFolder(const Path dir)
+{
+    m_watchFolder = dir;
+}
+
+Path Preferences::getWatchFolder()
+{
+    return m_watchFolder;
+}
+//~Gunzilla

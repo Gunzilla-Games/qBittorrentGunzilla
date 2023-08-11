@@ -61,6 +61,8 @@
 #include "base/utils/io.h"
 #include "base/utils/string.h"
 
+#include "base/preferences.h" //~Gunzilla
+
 using namespace std::chrono_literals;
 
 const std::chrono::seconds WATCH_INTERVAL {10};
@@ -295,6 +297,18 @@ void TorrentFilesWatcher::initWorker()
 
 void TorrentFilesWatcher::load()
 {
+    //~Gunzilla
+    auto *pref = Preferences::instance();
+    Path watchFolder = pref->getWatchFolder();
+    if (!watchFolder.isEmpty())
+    {
+        WatchedFolderOptions options;
+        options.addTorrentParams.savePath = watchFolder;
+
+        doSetWatchedFolder(watchFolder, options);
+    }
+    //~Gunzilla
+
     QFile confFile {(specialFolderLocation(SpecialFolder::Config) / Path(CONF_FILE_NAME)).data()};
     if (!confFile.exists())
     {
@@ -566,8 +580,12 @@ void TorrentFilesWatcher::Worker::processFolder(const Path &path, const Path &wa
             const nonstd::expected<BitTorrent::TorrentInfo, QString> result = BitTorrent::TorrentInfo::loadFromFile(filePath);
             if (result)
             {
+                //~Gunzilla
+                addTorrentParams.source = filePath.toString();
+                //~Gunzilla
+
                 emit torrentFound(result.value(), addTorrentParams);
-                Utils::Fs::removeFile(filePath);
+                //~Gunzilla Utils::Fs::removeFile(filePath);
             }
             else
             {
@@ -607,6 +625,9 @@ void TorrentFilesWatcher::Worker::processFailedTorrents()
             if (result)
             {
                 BitTorrent::AddTorrentParams addTorrentParams = options.addTorrentParams;
+                //~Gunzilla
+                addTorrentParams.source = torrentPath.toString();
+                //~Gunzilla
                 if (torrentPath != watchedFolderPath)
                 {
                     const Path subdirPath = watchedFolderPath.relativePathOf(torrentPath);
@@ -623,7 +644,7 @@ void TorrentFilesWatcher::Worker::processFailedTorrents()
                 }
 
                 emit torrentFound(result.value(), addTorrentParams);
-                Utils::Fs::removeFile(torrentPath);
+                //~Gunzilla Utils::Fs::removeFile(torrentPath);
 
                 return true;
             }

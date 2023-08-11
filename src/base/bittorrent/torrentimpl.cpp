@@ -261,6 +261,10 @@ TorrentImpl::TorrentImpl(SessionImpl *session, lt::session *nativeSession
     , m_ltAddTorrentParams(params.ltAddTorrentParams)
     , m_downloadLimit(cleanLimitValue(m_ltAddTorrentParams.download_limit))
     , m_uploadLimit(cleanLimitValue(m_ltAddTorrentParams.upload_limit))
+
+    //~Gunzilla
+    , m_sourceFile(params.source)
+    //~Gunzilla
 {
     if (m_ltAddTorrentParams.ti)
     {
@@ -1958,6 +1962,10 @@ void TorrentImpl::prepareResumeData(const lt::add_torrent_params &params)
         resumeData.savePath = m_savePath;
         resumeData.downloadPath = m_downloadPath;
     }
+
+    //~Gunzilla
+    resumeData.source = m_sourceFile;
+    //~Gunzilla
 
     m_session->handleTorrentResumeDataReady(this, resumeData);
 }

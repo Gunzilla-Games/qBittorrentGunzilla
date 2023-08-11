@@ -68,6 +68,10 @@ struct QBtCommandLineParameters
 
     explicit QBtCommandLineParameters(const QProcessEnvironment &);
     QStringList paramList() const;
+
+    //~Gunzilla
+    bool unzip = false;
+    //~Gunzilla
 };
 
 class CommandLineParameterError : public RuntimeError

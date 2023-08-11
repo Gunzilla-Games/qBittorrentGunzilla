@@ -337,6 +337,7 @@ namespace
     constexpr const BoolOption SEQUENTIAL_OPTION {"sequential"};
     constexpr const BoolOption FIRST_AND_LAST_OPTION {"first-and-last"};
     constexpr const TriStateBoolOption SKIP_DIALOG_OPTION {"skip-dialog", true};
+    constexpr const BoolOption UNZIP_OPTION{"7z"};
 }
 
 QBtCommandLineParameters::QBtCommandLineParameters(const QProcessEnvironment &env)
@@ -361,6 +362,10 @@ QBtCommandLineParameters::QBtCommandLineParameters(const QProcessEnvironment &en
     , configurationName(CONFIGURATION_OPTION.value(env))
     , savePath(SAVE_PATH_OPTION.value(env))
     , category(CATEGORY_OPTION.value(env))
+
+    //~Gunzilla
+    , unzip(UNZIP_OPTION.value(env))
+    //~Gunzilla
 {
 }
 
@@ -438,6 +443,12 @@ QBtCommandLineParameters parseCommandLine(const QStringList &args)
                                                     .arg(u"--torrenting-port"_qs));
                 }
             }
+            //~Gunzilla
+            else if (arg == UNZIP_OPTION)
+            {
+                result.unzip = true;
+            }
+            //~Gunzilla
 #ifndef DISABLE_GUI
             else if (arg == NO_SPLASH_OPTION)
             {

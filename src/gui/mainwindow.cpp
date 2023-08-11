@@ -130,7 +130,7 @@ MainWindow::MainWindow(IGUIApplication *app, const State initialState)
 
     Preferences *const pref = Preferences::instance();
     m_uiLocked = pref->isUILocked();
-    setWindowTitle(QStringLiteral("qBittorrent " QBT_VERSION));
+    setWindowTitle(QStringLiteral("Gunzilla qBittorrent " QBT_VERSION)); //~Gunzilla
     m_displaySpeedInTitle = pref->speedInTitleBar();
     // Setting icons
 #ifndef Q_OS_MACOS
@@ -682,6 +682,10 @@ void MainWindow::showFilterContextMenu()
 
 void MainWindow::displaySearchTab(bool enable)
 {
+    //~Gunzilla
+    return;
+    //~Gunzilla
+
     Preferences::instance()->setSearchEnabled(enable);
     if (enable)
     {
@@ -1911,6 +1915,15 @@ void MainWindow::updatePowerManagementState()
 #if defined(Q_OS_WIN) || defined(Q_OS_MACOS)
 void MainWindow::checkProgramUpdate(const bool invokedByUser)
 {
+    //~Gunzilla
+    if (m_ui && m_ui->actionCheckForUpdates)
+    {
+        m_ui->actionCheckForUpdates->setEnabled(false);
+        m_ui->actionCheckForUpdates->setVisible(false);
+    }
+    return;
+    //~Gunzilla
+
     if (m_programUpdateTimer)
         m_programUpdateTimer->stop();
 

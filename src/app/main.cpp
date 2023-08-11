@@ -261,8 +261,10 @@ int main(int argc, char *argv[])
             }
         }
 #elif !defined(DISABLE_GUI)
-        if (!(params.noSplash || Preferences::instance()->isSplashScreenDisabled()))
-            showSplashScreen();
+        //~Gunzilla
+        //if (!(params.noSplash || Preferences::instance()->isSplashScreenDisabled()))
+            //showSplashScreen();
+        //~Gunzilla
 #endif
 
         registerSignalHandlers();
@@ -318,6 +320,12 @@ bool userAgreesWithLegalNotice()
 {
     Preferences *const pref = Preferences::instance();
     Q_ASSERT(!pref->getAcceptedLegal());
+
+    //~Gunzilla
+    // // Save the answer
+    pref->setAcceptedLegal(true);
+    return true;
+    //~Gunzilla
 
 #ifdef DISABLE_GUI
     const QString eula = u"\n*** %1 ***\n"_qs.arg(QObject::tr("Legal Notice"))

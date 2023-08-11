@@ -1001,6 +1001,20 @@ void OptionsDialog::loadBittorrentTabOptions()
 {
     const auto *session = BitTorrent::Session::instance();
 
+    //~Gunzilla
+    m_ui->checkDHT->setEnabled(false);
+    m_ui->checkPeX->setEnabled(false);
+    m_ui->checkLSD->setEnabled(false);
+    m_ui->checkAnonymousMode->setEnabled(false);
+    m_ui->comboEncryption->setEnabled(false);
+
+    m_ui->checkAssociateTorrents->setEnabled(false);
+    m_ui->checkAssociateMagnetLinks->setEnabled(false);
+
+    m_ui->checkProgramUpdates->setEnabled(false);
+    m_ui->checkProgramUpdates->setVisible(false);
+    //~Gunzilla
+
     m_ui->checkDHT->setChecked(session->isDHTEnabled());
     m_ui->checkPeX->setChecked(session->isPeXEnabled());
     m_ui->checkLSD->setChecked(session->isLSDEnabled());

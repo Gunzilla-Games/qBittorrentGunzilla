@@ -43,6 +43,7 @@ namespace BitTorrent
     {
         lt::add_torrent_params ltAddTorrentParams {};
 
+        QString source; //~Gunzilla
         QString name;
         QString category;
         TagSet tags;

@@ -386,9 +386,9 @@ QStringList Session::expandCategory(const QString &category)
 
 SessionImpl::SessionImpl(QObject *parent)
     : Session(parent)
-    , m_isDHTEnabled(BITTORRENT_SESSION_KEY(u"DHTEnabled"_qs), true)
-    , m_isLSDEnabled(BITTORRENT_SESSION_KEY(u"LSDEnabled"_qs), true)
-    , m_isPeXEnabled(BITTORRENT_SESSION_KEY(u"PeXEnabled"_qs), true)
+    , m_isDHTEnabled(BITTORRENT_SESSION_KEY(u"DHTEnabled"_qs), false) //~Gunzilla
+    , m_isLSDEnabled(BITTORRENT_SESSION_KEY(u"LSDEnabled"_qs), false) //~Gunzilla
+    , m_isPeXEnabled(BITTORRENT_SESSION_KEY(u"PeXEnabled"_qs), false) //~Gunzilla
     , m_isIPFilteringEnabled(BITTORRENT_SESSION_KEY(u"IPFilteringEnabled"_qs), false)
     , m_isTrackerFilteringEnabled(BITTORRENT_SESSION_KEY(u"TrackerFilteringEnabled"_qs), false)
     , m_IPFilterFile(BITTORRENT_SESSION_KEY(u"IPFilter"_qs))
@@ -439,7 +439,7 @@ SessionImpl::SessionImpl(QObject *parent)
     , m_maxUploads(BITTORRENT_SESSION_KEY(u"MaxUploads"_qs), 20, lowerLimited(0, -1))
     , m_maxConnectionsPerTorrent(BITTORRENT_SESSION_KEY(u"MaxConnectionsPerTorrent"_qs), 100, lowerLimited(0, -1))
     , m_maxUploadsPerTorrent(BITTORRENT_SESSION_KEY(u"MaxUploadsPerTorrent"_qs), 4, lowerLimited(0, -1))
-    , m_btProtocol(BITTORRENT_SESSION_KEY(u"BTProtocol"_qs), BTProtocol::Both
+    , m_btProtocol(BITTORRENT_SESSION_KEY(u"BTProtocol"_qs), BTProtocol::TCP //~Gunzilla
         , clampValue(BTProtocol::Both, BTProtocol::UTP))
     , m_isUTPRateLimited(BITTORRENT_SESSION_KEY(u"uTPRateLimited"_qs), true)
     , m_utpMixedMode(BITTORRENT_SESSION_KEY(u"uTPMixedMode"_qs), MixedModeAlgorithm::TCP
@@ -473,7 +473,7 @@ SessionImpl::SessionImpl(QObject *parent)
     , m_networkInterface(BITTORRENT_SESSION_KEY(u"Interface"_qs))
     , m_networkInterfaceName(BITTORRENT_SESSION_KEY(u"InterfaceName"_qs))
     , m_networkInterfaceAddress(BITTORRENT_SESSION_KEY(u"InterfaceAddress"_qs))
-    , m_encryption(BITTORRENT_SESSION_KEY(u"Encryption"_qs), 0)
+    , m_encryption(BITTORRENT_SESSION_KEY(u"Encryption"_qs), 1)
     , m_maxActiveCheckingTorrents(BITTORRENT_SESSION_KEY(u"MaxActiveCheckingTorrents"_qs), 1)
     , m_isProxyPeerConnectionsEnabled(BITTORRENT_SESSION_KEY(u"ProxyPeerConnections"_qs), false)
     , m_isProxyHostnameLookupEnabled(BITTORRENT_SESSION_KEY(u"ProxyHostnameLookup"_qs), true)
@@ -578,6 +578,17 @@ SessionImpl::SessionImpl(QObject *parent)
     enableTracker(isTrackerEnabled());
 
     prepareStartup();
+
+    //~Gunzilla
+    m_progressReportTimer = new QTimer {this};
+    connect(m_progressReportTimer, &QTimer::timeout, this, &SessionImpl::OnProgressReportTimer);
+    const int progressReportTimerIntervalSec = 2;
+    if (progressReportTimerIntervalSec > 0)
+    {
+        m_progressReportTimer->setInterval(std::chrono::seconds(progressReportTimerIntervalSec));
+        m_progressReportTimer->start();
+    }
+    //~Gunzilla
 }
 
 SessionImpl::~SessionImpl()
@@ -610,6 +621,10 @@ bool SessionImpl::isDHTEnabled() const
 
 void SessionImpl::setDHTEnabled(bool enabled)
 {
+    //~Gunzilla
+    return;
+    //~Gunzilla
+
     if (enabled != m_isDHTEnabled)
     {
         m_isDHTEnabled = enabled;
@@ -625,6 +640,10 @@ bool SessionImpl::isLSDEnabled() const
 
 void SessionImpl::setLSDEnabled(const bool enabled)
 {
+    //~Gunzilla
+    return;
+    //~Gunzilla
+
     if (enabled != m_isLSDEnabled)
     {
         m_isLSDEnabled = enabled;
@@ -641,6 +660,10 @@ bool SessionImpl::isPeXEnabled() const
 
 void SessionImpl::setPeXEnabled(const bool enabled)
 {
+    //~Gunzilla
+    return;
+    //~Gunzilla
+
     m_isPeXEnabled = enabled;
     if (m_wasPexEnabled != enabled)
         LogMsg(tr("Restart is required to toggle Peer Exchange (PeX) support"), Log::WARNING);
@@ -1101,6 +1124,15 @@ void SessionImpl::configureComponents()
 
 void SessionImpl::prepareStartup()
 {
+    //~Gunzilla
+    {
+        //auto* context = new ResumeSessionContext(this);
+        //context->currentStorageType = resumeDataStorageType();
+        //endStartup(context);
+        //return; // Do not load resume data
+    }
+    //~Gunzilla
+
     qDebug("Initializing torrents resume data storage...");
 
     const Path dbPath = specialFolderLocation(SpecialFolder::Data) / Path(u"torrents.db"_qs);
@@ -2290,6 +2322,14 @@ bool SessionImpl::deleteTorrent(const TorrentID &id, const DeleteOption deleteOp
         }
 
         m_nativeSession->remove_torrent(torrent->nativeHandle(), lt::session::delete_files);
+
+        //~Gunzilla
+        if (!torrent->sourceFile().isEmpty())
+        {
+            // Delete .torrent file
+            Utils::Fs::removeFile(Path(torrent->sourceFile()));
+        }
+        //~Gunzilla
     }
 
     // Remove it from torrent resume directory
@@ -2509,6 +2549,14 @@ bool SessionImpl::addTorrent(const QString &source, const AddTorrentParams &para
        return false;
     }
 
+    //~Gunzilla
+    if (!loadResult->isPrivate())
+    {
+        LogMsg(tr("Failed to load non private torrent. Source: \"%1\". Reason: Only private torrents supported").arg(source), Log::WARNING);
+        return false;
+    }
+    //~Gunzilla
+
     guard.markAsAddedToSession();
     return addTorrent(loadResult.value(), params);
 }
@@ -2535,6 +2583,10 @@ bool SessionImpl::addTorrent(const TorrentInfo &torrentInfo, const AddTorrentPar
 LoadTorrentParams SessionImpl::initLoadTorrentParams(const AddTorrentParams &addTorrentParams)
 {
     LoadTorrentParams loadTorrentParams;
+
+    //~Gunzilla
+    loadTorrentParams.source = addTorrentParams.source;
+    //~Gunzilla
 
     loadTorrentParams.name = addTorrentParams.name;
     loadTorrentParams.useAutoTMM = addTorrentParams.useAutoTMM.value_or(!isAutoTMMDisabledByDefault());
@@ -2885,6 +2937,10 @@ void SessionImpl::exportTorrentFile(const Torrent *torrent, const Path &folderPa
 
 void SessionImpl::generateResumeData()
 {
+    //~Gunzilla
+    return; // Do not save resume data
+    //~Gunzilla
+
     for (TorrentImpl *const torrent : asConst(m_torrents))
     {
         if (!torrent->isValid()) continue;
@@ -2900,6 +2956,10 @@ void SessionImpl::generateResumeData()
 // Called on exit
 void SessionImpl::saveResumeData()
 {
+    //~Gunzilla
+    return; // Do not save resume data
+    //~Gunzilla
+
     // Pause session
     m_nativeSession->pause();
 
@@ -3415,6 +3475,10 @@ int SessionImpl::encryption() const
 
 void SessionImpl::setEncryption(const int state)
 {
+    //~Gunzilla
+    return;
+    //~Gunzilla
+
     if (state != encryption())
     {
         m_encryption = state;
@@ -4057,6 +4121,10 @@ bool SessionImpl::isAnonymousModeEnabled() const
 
 void SessionImpl::setAnonymousModeEnabled(const bool enabled)
 {
+    //~Gunzilla
+    return;
+    //~Gunzilla
+
     if (enabled != m_isAnonymousModeEnabled)
     {
         m_isAnonymousModeEnabled = enabled;
@@ -5748,3 +5816,33 @@ void SessionImpl::loadStatistics()
     m_previouslyDownloaded = value[u"AlltimeDL"_qs].toLongLong();
     m_previouslyUploaded = value[u"AlltimeUL"_qs].toLongLong();
 }
+
+
+//~Gunzilla
+void SessionImpl::OnProgressReportTimer()
+{
+    for (auto it = m_torrents.begin(); it != m_torrents.end(); ++it)
+    {
+        TorrentImpl* torrent = static_cast<TorrentImpl*>(it.value());
+        if (torrent->state() == TorrentState::Downloading)
+        {
+            float progress = (float)torrent->progress();
+
+            QString sourceFile = torrent->sourceFile();
+
+            // Write .progress file
+            {
+                QString doneFile = sourceFile + QString(u".progress"_qs);
+                QFile file(doneFile);
+                if (file.open(QIODevice::WriteOnly | QIODevice::Text))
+                {
+                    QTextStream stream(&file);
+                    stream << progress;
+                    file.close();
+                }
+            }
+            Utils::Fs::removeFile(Path(sourceFile + QString(u".done"_qs)));
+        }
+    }
+}
+//~Gunzilla

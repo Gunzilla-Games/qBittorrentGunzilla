@@ -213,4 +213,9 @@ private:
 #ifndef DISABLE_WEBUI
     WebUI *m_webui = nullptr;
 #endif
+
+    //~Gunzilla
+    void handleTorrentFinished(const BitTorrent::Torrent* torrent) const;
+    void unzipTorrent(const BitTorrent::Torrent *torrent) const;
+    //~Gunzilla
 };

@@ -225,6 +225,10 @@ BitTorrent::LoadResumeDataResult BitTorrent::BencodeResumeDataStorage::loadTorre
                     Path(fromLTString(resumeDataRoot.dict_find_string_value("qBt-downloadPath"))));
     }
 
+    //~Gunzilla
+    torrentParams.source = fromLTString(resumeDataRoot.dict_find_string_value("qBt-source"));
+    //~Gunzilla
+
     // TODO: The following code is deprecated. Replace with the commented one after several releases in 4.4.x.
     // === BEGIN DEPRECATED CODE === //
     const lt::bdecode_node contentLayoutNode = resumeDataRoot.dict_find("qBt-contentLayout");
@@ -305,6 +309,10 @@ BitTorrent::LoadResumeDataResult BitTorrent::BencodeResumeDataStorage::loadTorre
 
 void BitTorrent::BencodeResumeDataStorage::store(const TorrentID &id, const LoadTorrentParams &resumeData) const
 {
+    //~Gunzilla
+    return; // Save resume data disabled
+    //~Gunzilla
+
     QMetaObject::invokeMethod(m_asyncWorker, [this, id, resumeData]()
     {
         m_asyncWorker->store(id, resumeData);
@@ -321,6 +329,9 @@ void BitTorrent::BencodeResumeDataStorage::remove(const TorrentID &id) const
 
 void BitTorrent::BencodeResumeDataStorage::storeQueue(const QVector<TorrentID> &queue) const
 {
+    //~Gunzilla
+    return; // Save resume data disabled
+    //~Gunzilla
     QMetaObject::invokeMethod(m_asyncWorker, [this, queue]()
     {
         m_asyncWorker->storeQueue(queue);
@@ -396,6 +407,10 @@ void BitTorrent::BencodeResumeDataStorage::Worker::store(const TorrentID &id, co
         data["qBt-savePath"] = Profile::instance()->toPortablePath(resumeData.savePath).data().toStdString();
         data["qBt-downloadPath"] = Profile::instance()->toPortablePath(resumeData.downloadPath).data().toStdString();
     }
+
+    //~Gunzilla
+    data["qBt-source"] = resumeData.source.toStdString();
+    //~Gunzilla
 
     const Path resumeFilepath = m_resumeDataDir / Path(u"%1.fastresume"_qs.arg(id.toString()));
     const nonstd::expected<void, QString> result = Utils::IO::saveToFile(resumeFilepath, data);

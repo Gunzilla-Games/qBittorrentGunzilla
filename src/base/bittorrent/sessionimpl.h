@@ -730,5 +730,10 @@ namespace BitTorrent
         friend void Session::freeInstance();
         friend Session *Session::instance();
         static Session *m_instance;
+
+        //~Gunzilla
+        QTimer *m_progressReportTimer = nullptr;
+        void OnProgressReportTimer();
+        //~Gunzilla
     };
 }
