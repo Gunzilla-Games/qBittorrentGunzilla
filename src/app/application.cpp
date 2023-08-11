@@ -705,7 +705,7 @@ Application::AddTorrentParams Application::parseParams(const QStringList &params
         parsedParams.torrentSources.append(param);
 
         //~Gunzilla
-        parsedParams.torrentParams.source = parsedParams.torrentSource;
+        parsedParams.torrentParams.source = parsedParams.torrentSources[0];
         //~Gunzilla
 
         break;
