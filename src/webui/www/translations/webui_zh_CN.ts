@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="zh">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="zh">
 <context>
     <name>AboutDlg</name>
     <message>
@@ -39,7 +37,7 @@
         <translation>创建子文件夹</translation>
     </message>
     <message>
-        <source>Don't create subfolder</source>
+        <source>Don&apos;t create subfolder</source>
         <translation>不创建子文件夹</translation>
     </message>
     <message>
@@ -52,19 +50,19 @@
     </message>
     <message>
         <source>Metadata received</source>
-        <translation type="unfinished" />
+        <translation>已收到元数据</translation>
     </message>
     <message>
         <source>Files checked</source>
-        <translation type="unfinished" />
+        <translation>已检查的文件</translation>
     </message>
     <message>
         <source>Stop condition:</source>
-        <translation type="unfinished" />
+        <translation>停止条件：</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished" />
+        <translation>无</translation>
     </message>
 </context>
 <context>
@@ -605,11 +603,11 @@
     </message>
     <message>
         <source>Would you like to resume all torrents?</source>
-        <translation type="unfinished" />
+        <translation>你要继续下载所有的种子吗？</translation>
     </message>
     <message>
         <source>Would you like to pause all torrents?</source>
-        <translation type="unfinished" />
+        <translation>你要暂停所有的种子吗？</translation>
     </message>
 </context>
 <context>
@@ -783,10 +781,6 @@
         <translation>类型：</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation>(无)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -809,10 +803,6 @@
     <message>
         <source>Use proxy for peer connections</source>
         <translation>使用代理服务器进行用户连接</translation>
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation>只对 torrent 使用代理</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -989,8 +979,8 @@
         <translation>%T：当前 tracker</translation>
     </message>
     <message>
-        <source>Tip: Encapsulate parameter with quotation marks to avoid text being cut off at whitespace (e.g., "%N")</source>
-        <translation>提示：使用引号将参数扩起以防止文本被空白符分割（例如："%N"）</translation>
+        <source>Tip: Encapsulate parameter with quotation marks to avoid text being cut off at whitespace (e.g., &quot;%N&quot;)</source>
+        <translation>提示：使用引号将参数扩起以防止文本被空白符分割（例如：&quot;%N&quot;）</translation>
     </message>
     <message>
         <source>The Web UI username must be at least 3 characters long.</source>
@@ -1445,7 +1435,7 @@
         <translation>原始</translation>
     </message>
     <message>
-        <source>Don't create subfolder</source>
+        <source>Don&apos;t create subfolder</source>
         <translation>不创建子文件夹</translation>
     </message>
     <message>
@@ -1593,12 +1583,12 @@
 In order to defend against DNS rebinding attack,
 you should put in domain names used by WebUI server.
 
-Use ';' to split multiple entries. Can use wildcard '*'.</source>
+Use &apos;;&apos; to split multiple entries. Can use wildcard &apos;*&apos;.</source>
         <translation>白名单用于过滤 HTTP 头的 Host 参数。
 为了预防 DNS 反向绑定攻击，
 您应当指定供 Web UI 使用的域名。
 
-使用 ';' 区分不同的输入。可以使用通配符 '*'。</translation>
+使用 &apos;;&apos; 区分不同的输入。可以使用通配符 &apos;*&apos;。</translation>
     </message>
     <message>
         <source>Run external program on torrent added</source>
@@ -1609,8 +1599,8 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation>HTTPS 证书不能为空</translation>
     </message>
     <message>
-        <source>Specify reverse proxy IPs (or subnets, e.g. 0.0.0.0/24) in order to use forwarded client address (X-Forwarded-For header). Use ';' to split multiple entries.</source>
-        <translation>指定反向代理 IP（或子网，如 0.0.0.0/24）以使用转发的客户端地址（X-Forwarded-For 标头)。使用 ';' 符号分割多个条目。</translation>
+        <source>Specify reverse proxy IPs (or subnets, e.g. 0.0.0.0/24) in order to use forwarded client address (X-Forwarded-For header). Use &apos;;&apos; to split multiple entries.</source>
+        <translation>指定反向代理 IP（或子网，如 0.0.0.0/24）以使用转发的客户端地址（X-Forwarded-For 标头)。使用 &apos;;&apos; 符号分割多个条目。</translation>
     </message>
     <message>
         <source>HTTPS key should not be empty</source>
@@ -1622,35 +1612,55 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Files checked</source>
-        <translation type="unfinished" />
+        <translation>选中的文件</translation>
     </message>
     <message>
         <source>Enable port forwarding for embedded tracker:</source>
-        <translation type="unfinished" />
+        <translation>对嵌入的 tracker 启用端口转发</translation>
     </message>
     <message>
         <source>If checked, hostname lookups are done via the proxy.</source>
-        <translation type="unfinished" />
+        <translation>勾选后将通过代理查找主机名</translation>
     </message>
     <message>
         <source>Use proxy for hostname lookup</source>
-        <translation type="unfinished" />
+        <translation>使用代理进行主机名查询</translation>
     </message>
     <message>
         <source>Metadata received</source>
-        <translation type="unfinished" />
+        <translation>已收到元数据</translation>
     </message>
     <message>
         <source>Torrent stop condition:</source>
-        <translation type="unfinished" />
+        <translation>种子停止条件：</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished" />
+        <translation>无</translation>
     </message>
     <message>
         <source>Example: 172.17.32.0/24, fdff:ffff:c8::/40</source>
-        <translation type="unfinished" />
+        <translation>示例：172.17.32.0/24, fdff:ffff:c8::/40</translation>
+    </message>
+    <message>
+        <source>SQLite database (experimental)</source>
+        <translation>SQLite数据库（实验性功能）</translation>
+    </message>
+    <message>
+        <source>Resume data storage type (requires restart):</source>
+        <translation>恢复数据存储类型（需要重新启动）：</translation>
+    </message>
+    <message>
+        <source>Fastresume files</source>
+        <translation>快速恢复文件</translation>
+    </message>
+    <message>
+        <source>(None)</source>
+        <translation>(无)</translation>
+    </message>
+    <message>
+        <source>Use proxy only for torrents</source>
+        <translation>只对 torrent 使用代理</translation>
     </message>
 </context>
 <context>
@@ -1733,7 +1743,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Peer ID Client</source>
-        <translation type="unfinished" />
+        <translation>Peer ID 客戶端</translation>
     </message>
 </context>
 <context>
@@ -2959,11 +2969,11 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation>显示</translation>
     </message>
     <message>
-        <source>Click the "Search plugins..." button at the bottom right of the window to install some.</source>
+        <source>Click the &quot;Search plugins...&quot; button at the bottom right of the window to install some.</source>
         <translation>单击窗口底部右侧的“搜索插件...“按钮安装一些</translation>
     </message>
     <message>
-        <source>There aren't any search plugins installed.</source>
+        <source>There aren&apos;t any search plugins installed.</source>
         <translation>未安装任何搜索插件</translation>
     </message>
 </context>
@@ -2994,7 +3004,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation>启用</translation>
     </message>
     <message>
-        <source>Warning: Be sure to comply with your country's copyright laws when downloading torrents from any of these search engines.</source>
+        <source>Warning: Be sure to comply with your country&apos;s copyright laws when downloading torrents from any of these search engines.</source>
         <translation>警告：在下载来自这些搜索引擎的 torrent 时，请确认它符合您所在国家的版权法。</translation>
     </message>
     <message>
@@ -3432,7 +3442,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>| is used as OR operator</source>
-        <translation>| —— "或" 运算符</translation>
+        <translation>| —— &quot;或&quot; 运算符</translation>
     </message>
     <message>
         <source>Clear downloaded episodes</source>
@@ -3440,7 +3450,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Whitespaces count as AND operators (all words, any order)</source>
-        <translation>空格 —— "与" 运算符 (所有关键词，任意顺序)</translation>
+        <translation>空格 —— &quot;与&quot; 运算符 (所有关键词，任意顺序)</translation>
     </message>
     <message>
         <source>An expression with an empty %1 clause (e.g. %2)</source>
@@ -3594,7 +3604,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <source>Smart Episode Filter will check the episode number to prevent downloading of duplicates.
 Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also support - as a separator)</source>
         <translation>智能剧集过滤器会检查集数以避免重复下载。
-支持格式：S01E01，1x1，2017.12.31，31.12.2017 (日期分隔符也可用 "-" 符号)</translation>
+支持格式：S01E01，1x1，2017.12.31，31.12.2017 (日期分隔符也可用 &quot;-&quot; 符号)</translation>
     </message>
     <message>
         <source>Torrent content layout:</source>
@@ -3609,7 +3619,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
         <translation>原始</translation>
     </message>
     <message>
-        <source>Don't create subfolder</source>
+        <source>Don&apos;t create subfolder</source>
         <translation>不创建子文件夹</translation>
     </message>
 </context>
@@ -3647,4 +3657,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
         <translation>未读</translation>
     </message>
 </context>
+<context>
+    <name>ExecutionLogWidget</name>
+    </context>
 </TS>

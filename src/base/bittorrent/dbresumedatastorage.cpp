@@ -1,6 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2021  Vladimir Golovnev <glassez@yandex.ru>
+ * Copyright (C) 2021-2023  Vladimir Golovnev <glassez@yandex.ru>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -54,6 +54,7 @@
 #include "base/profile.h"
 #include "base/utils/fs.h"
 #include "base/utils/string.h"
+#include "common.h"
 #include "infohash.h"
 #include "loadtorrentparams.h"
 
@@ -228,7 +229,8 @@ namespace BitTorrent
             const QByteArray bencodedResumeData = query.value(DB_COLUMN_RESUMEDATA.name).toByteArray();
 
             lt::error_code ec;
-            const lt::bdecode_node resumeDataRoot = lt::bdecode(bencodedResumeData, ec);
+            const lt::bdecode_node resumeDataRoot = lt::bdecode(bencodedResumeData, ec
+                    , nullptr, BENCODE_DEPTH_LIMIT, BENCODE_TOKEN_LIMIT);
 
             lt::add_torrent_params &p = resumeData.ltAddTorrentParams;
 
@@ -236,7 +238,8 @@ namespace BitTorrent
 
             if (const QByteArray bencodedMetadata = query.value(DB_COLUMN_METADATA.name).toByteArray(); !bencodedMetadata.isEmpty())
             {
-                const lt::bdecode_node torentInfoRoot = lt::bdecode(bencodedMetadata, ec);
+                const lt::bdecode_node torentInfoRoot = lt::bdecode(bencodedMetadata, ec
+                        , nullptr, BENCODE_DEPTH_LIMIT, BENCODE_TOKEN_LIMIT);
                 p.ti = std::make_shared<lt::torrent_info>(torentInfoRoot, ec);
             }
 
@@ -256,7 +259,7 @@ namespace BitTorrent
 
 BitTorrent::DBResumeDataStorage::DBResumeDataStorage(const Path &dbPath, QObject *parent)
     : ResumeDataStorage(dbPath, parent)
-    , m_ioThread {new QThread(this)}
+    , m_ioThread {new QThread}
 {
     const bool needCreateDB = !dbPath.exists();
 
@@ -272,13 +275,13 @@ BitTorrent::DBResumeDataStorage::DBResumeDataStorage(const Path &dbPath, QObject
     else
     {
         const int dbVersion = (!db.record(DB_TABLE_TORRENTS).contains(DB_COLUMN_DOWNLOAD_PATH.name) ? 1 : currentDBVersion());
-        if (dbVersion != DB_VERSION)
+        if (dbVersion < DB_VERSION)
             updateDB(dbVersion);
     }
 
     m_asyncWorker = new Worker(dbPath, u"ResumeDataStorageWorker"_qs, m_dbLock);
-    m_asyncWorker->moveToThread(m_ioThread);
-    connect(m_ioThread, &QThread::finished, m_asyncWorker, &QObject::deleteLater);
+    m_asyncWorker->moveToThread(m_ioThread.get());
+    connect(m_ioThread.get(), &QThread::finished, m_asyncWorker, &QObject::deleteLater);
     m_ioThread->start();
 
     RuntimeError *errPtr = nullptr;
@@ -302,9 +305,6 @@ BitTorrent::DBResumeDataStorage::~DBResumeDataStorage()
 {
     QMetaObject::invokeMethod(m_asyncWorker, &Worker::closeDatabase);
     QSqlDatabase::removeDatabase(DB_CONNECTION_NAME);
-
-    m_ioThread->quit();
-    m_ioThread->wait();
 }
 
 QVector<BitTorrent::TorrentID> BitTorrent::DBResumeDataStorage::registeredTorrents() const
@@ -534,18 +534,28 @@ void BitTorrent::DBResumeDataStorage::updateDB(const int fromVersion) const
     {
         if (fromVersion == 1)
         {
-            const auto alterTableTorrentsQuery = u"ALTER TABLE %1 ADD %2"_qs
-                    .arg(quoted(DB_TABLE_TORRENTS), makeColumnDefinition(DB_COLUMN_DOWNLOAD_PATH, "TEXT"));
-            if (!query.exec(alterTableTorrentsQuery))
-                throw RuntimeError(query.lastError().text());
+            const auto testQuery = u"SELECT COUNT(%1) FROM %2;"_qs
+                    .arg(quoted(DB_COLUMN_DOWNLOAD_PATH.name), quoted(DB_TABLE_TORRENTS));
+            if (!query.exec(testQuery))
+            {
+                const auto alterTableTorrentsQuery = u"ALTER TABLE %1 ADD %2"_qs
+                        .arg(quoted(DB_TABLE_TORRENTS), makeColumnDefinition(DB_COLUMN_DOWNLOAD_PATH, "TEXT"));
+                if (!query.exec(alterTableTorrentsQuery))
+                    throw RuntimeError(query.lastError().text());
+            }
         }
 
         if (fromVersion <= 2)
         {
-            const auto alterTableTorrentsQuery = u"ALTER TABLE %1 ADD %2"_qs
-                    .arg(quoted(DB_TABLE_TORRENTS), makeColumnDefinition(DB_COLUMN_STOP_CONDITION, "TEXT NOT NULL DEFAULT `None`"));
-            if (!query.exec(alterTableTorrentsQuery))
-                throw RuntimeError(query.lastError().text());
+            const auto testQuery = u"SELECT COUNT(%1) FROM %2;"_qs
+                    .arg(quoted(DB_COLUMN_STOP_CONDITION.name), quoted(DB_TABLE_TORRENTS));
+            if (!query.exec(testQuery))
+            {
+                const auto alterTableTorrentsQuery = u"ALTER TABLE %1 ADD %2"_qs
+                        .arg(quoted(DB_TABLE_TORRENTS), makeColumnDefinition(DB_COLUMN_STOP_CONDITION, "TEXT NOT NULL DEFAULT `None`"));
+                if (!query.exec(alterTableTorrentsQuery))
+                    throw RuntimeError(query.lastError().text());
+            }
         }
 
         const QString updateMetaVersionQuery = makeUpdateStatement(DB_TABLE_META, {DB_COLUMN_NAME, DB_COLUMN_VALUE});
@@ -620,6 +630,7 @@ void BitTorrent::DBResumeDataStorage::Worker::store(const TorrentID &id, const L
         DB_COLUMN_CATEGORY,
         DB_COLUMN_TAGS,
         DB_COLUMN_TARGET_SAVE_PATH,
+        DB_COLUMN_DOWNLOAD_PATH,
         DB_COLUMN_CONTENT_LAYOUT,
         DB_COLUMN_RATIO_LIMIT,
         DB_COLUMN_SEEDING_TIME_LIMIT,

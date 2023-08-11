@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nl">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="nl">
 <context>
     <name>AboutDlg</name>
     <message>
@@ -39,7 +37,7 @@
         <translation>Submap aanmaken</translation>
     </message>
     <message>
-        <source>Don't create subfolder</source>
+        <source>Don&apos;t create subfolder</source>
         <translation>Geen submap aanmaken</translation>
     </message>
     <message>
@@ -52,19 +50,19 @@
     </message>
     <message>
         <source>Metadata received</source>
-        <translation type="unfinished" />
+        <translation>Metadata ontvangen</translation>
     </message>
     <message>
         <source>Files checked</source>
-        <translation type="unfinished" />
+        <translation>Bestanden gecontroleerd</translation>
     </message>
     <message>
         <source>Stop condition:</source>
-        <translation type="unfinished" />
+        <translation>Stop-voorwaarde:</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished" />
+        <translation>Geen</translation>
     </message>
 </context>
 <context>
@@ -289,7 +287,7 @@
     </message>
     <message>
         <source>Download Torrents from their URLs or Magnet links</source>
-        <translation>Torrents downloaden via hun URL's of magneetkoppelingen</translation>
+        <translation>Torrents downloaden via hun URL&apos;s of magneetkoppelingen</translation>
     </message>
     <message>
         <source>Upload local torrent</source>
@@ -605,11 +603,11 @@
     </message>
     <message>
         <source>Would you like to resume all torrents?</source>
-        <translation type="unfinished" />
+        <translation>Wilt u alle torrents hervatten?</translation>
     </message>
     <message>
         <source>Would you like to pause all torrents?</source>
-        <translation type="unfinished" />
+        <translation>Wilt u alle torrents pauzeren?</translation>
     </message>
 </context>
 <context>
@@ -783,10 +781,6 @@
         <translation>Type:</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation>(Geen)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -809,10 +803,6 @@
     <message>
         <source>Use proxy for peer connections</source>
         <translation>Proxy gebruiken voor peer-verbindingen</translation>
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation>Proxy alleen voor torrents gebruiken</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -989,8 +979,8 @@
         <translation>%T: huidige tracker</translation>
     </message>
     <message>
-        <source>Tip: Encapsulate parameter with quotation marks to avoid text being cut off at whitespace (e.g., "%N")</source>
-        <translation>Tip: omring de parameter met aanhalingstekens om te vermijden dat tekst afgekapt wordt bij witruimte (bijvoorbeeld: "%N")</translation>
+        <source>Tip: Encapsulate parameter with quotation marks to avoid text being cut off at whitespace (e.g., &quot;%N&quot;)</source>
+        <translation>Tip: omring de parameter met aanhalingstekens om te vermijden dat tekst afgekapt wordt bij witruimte (bijvoorbeeld: &quot;%N&quot;)</translation>
     </message>
     <message>
         <source>The Web UI username must be at least 3 characters long.</source>
@@ -1445,7 +1435,7 @@
         <translation>Oorspronkelijk</translation>
     </message>
     <message>
-        <source>Don't create subfolder</source>
+        <source>Don&apos;t create subfolder</source>
         <translation>Geen submap aanmaken</translation>
     </message>
     <message>
@@ -1470,7 +1460,7 @@
     </message>
     <message>
         <source>Trusted proxies list:</source>
-        <translation>Lijst van vertrouwde proxy's:</translation>
+        <translation>Lijst van vertrouwde proxy&apos;s:</translation>
     </message>
     <message>
         <source>Enable reverse proxy support</source>
@@ -1593,12 +1583,12 @@
 In order to defend against DNS rebinding attack,
 you should put in domain names used by WebUI server.
 
-Use ';' to split multiple entries. Can use wildcard '*'.</source>
+Use &apos;;&apos; to split multiple entries. Can use wildcard &apos;*&apos;.</source>
         <translation>Whitelist voor filteren van HTTP-host header-waarden.
 Om te verdedigen tegen een DNS-rebinding-aanval
 zet u er domeinnamen in die gebruikt worden door de WebUI-server.
 
-Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</translation>
+Gebruik &apos;;&apos; om meerdere items te splitsen. Jokerteken &apos;*&apos; kan gebruikt worden.</translation>
     </message>
     <message>
         <source>Run external program on torrent added</source>
@@ -1609,8 +1599,8 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
         <translation>HTTPS-certificaat mag niet leeg zijn</translation>
     </message>
     <message>
-        <source>Specify reverse proxy IPs (or subnets, e.g. 0.0.0.0/24) in order to use forwarded client address (X-Forwarded-For header). Use ';' to split multiple entries.</source>
-        <translation>Geef reverse proxy IP's (of subnets, bijvoorbeeld 0.0.0.0/24) op om forwarded client adres te gebruiken (X-Forwarded-For header). Gebruik ';' om meerdere items te splitsen.</translation>
+        <source>Specify reverse proxy IPs (or subnets, e.g. 0.0.0.0/24) in order to use forwarded client address (X-Forwarded-For header). Use &apos;;&apos; to split multiple entries.</source>
+        <translation>Geef reverse proxy IP&apos;s (of subnets, bijvoorbeeld 0.0.0.0/24) op om forwarded client adres te gebruiken (X-Forwarded-For header). Gebruik &apos;;&apos; om meerdere items te splitsen.</translation>
     </message>
     <message>
         <source>HTTPS key should not be empty</source>
@@ -1622,35 +1612,55 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
     </message>
     <message>
         <source>Files checked</source>
-        <translation type="unfinished" />
+        <translation>Bestanden gecontroleerd</translation>
     </message>
     <message>
         <source>Enable port forwarding for embedded tracker:</source>
-        <translation type="unfinished" />
+        <translation>Port forwarding inschakelen voor ingebedde tracker:</translation>
     </message>
     <message>
         <source>If checked, hostname lookups are done via the proxy.</source>
-        <translation type="unfinished" />
+        <translation>Indien aangevinkt, worden hostnamen opgezocht via de proxy.</translation>
     </message>
     <message>
         <source>Use proxy for hostname lookup</source>
-        <translation type="unfinished" />
+        <translation>Proxy gebruiken voor opzoeken van hostnamen</translation>
     </message>
     <message>
         <source>Metadata received</source>
-        <translation type="unfinished" />
+        <translation>Metadata ontvangen</translation>
     </message>
     <message>
         <source>Torrent stop condition:</source>
-        <translation type="unfinished" />
+        <translation>Stop-voowaarde torrent:</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished" />
+        <translation>Geen</translation>
     </message>
     <message>
         <source>Example: 172.17.32.0/24, fdff:ffff:c8::/40</source>
-        <translation type="unfinished" />
+        <translation>Voorbeeld: 172.17.32.0/24, fdff:ffff:c8::/40</translation>
+    </message>
+    <message>
+        <source>SQLite database (experimental)</source>
+        <translation>SQLite-database (experimenteel)</translation>
+    </message>
+    <message>
+        <source>Resume data storage type (requires restart):</source>
+        <translation>Opslagtype hervattingsgegevens (opnieuw starten vereist):</translation>
+    </message>
+    <message>
+        <source>Fastresume files</source>
+        <translation>Bestanden voor snel hervatten</translation>
+    </message>
+    <message>
+        <source>(None)</source>
+        <translation>(Geen)</translation>
+    </message>
+    <message>
+        <source>Use proxy only for torrents</source>
+        <translation>Proxy alleen voor torrents gebruiken</translation>
     </message>
 </context>
 <context>
@@ -1733,7 +1743,7 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
     </message>
     <message>
         <source>Peer ID Client</source>
-        <translation type="unfinished" />
+        <translation>Peer-ID client</translation>
     </message>
 </context>
 <context>
@@ -2771,7 +2781,7 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
     <name>downloadFromURL</name>
     <message>
         <source>Download from URLs</source>
-        <translation>Downloaden uit URL's</translation>
+        <translation>Downloaden uit URL&apos;s</translation>
     </message>
     <message>
         <source>Download</source>
@@ -2959,11 +2969,11 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
         <translation>weergeven van</translation>
     </message>
     <message>
-        <source>Click the "Search plugins..." button at the bottom right of the window to install some.</source>
-        <translation>Klik op de knop "zoekplugins..." rechtsonder in het venster om er enkele te installeren.</translation>
+        <source>Click the &quot;Search plugins...&quot; button at the bottom right of the window to install some.</source>
+        <translation>Klik op de knop &quot;zoekplugins...&quot; rechtsonder in het venster om er enkele te installeren.</translation>
     </message>
     <message>
-        <source>There aren't any search plugins installed.</source>
+        <source>There aren&apos;t any search plugins installed.</source>
         <translation>Er zijn geen zoekplugins geïnstalleerd.</translation>
     </message>
 </context>
@@ -2994,7 +3004,7 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
         <translation>Ingeschakeld</translation>
     </message>
     <message>
-        <source>Warning: Be sure to comply with your country's copyright laws when downloading torrents from any of these search engines.</source>
+        <source>Warning: Be sure to comply with your country&apos;s copyright laws when downloading torrents from any of these search engines.</source>
         <translation>Waarschuwing: verzeker u ervan dat u voldoet aan de wetten op auteursrecht in uw land wanneer u torrents downloadt via een van deze zoekmachines.</translation>
     </message>
     <message>
@@ -3532,7 +3542,7 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
     </message>
     <message>
         <source>Season number is a mandatory non-zero value</source>
-        <translation>Seizoensnummer is een verplichte "geen nul"-waarde</translation>
+        <translation>Seizoensnummer is een verplichte &quot;geen nul&quot;-waarde</translation>
     </message>
     <message>
         <source>Never</source>
@@ -3580,7 +3590,7 @@ Gebruik ';' om meerdere items te splitsen. Jokerteken '*' kan gebruikt worden.</
     </message>
     <message>
         <source>Rename rule...</source>
-        <translation>Regel hernoemen...</translation>
+        <translation>Naam van regel wijzigen...</translation>
     </message>
     <message>
         <source>Last Match: Unknown</source>
@@ -3609,7 +3619,7 @@ Ondersteunt de formaten:  S01E01, 1x1, 2017.12.31 en 31.12.2017 (datumformaten o
         <translation>Oorspronkelijk</translation>
     </message>
     <message>
-        <source>Don't create subfolder</source>
+        <source>Don&apos;t create subfolder</source>
         <translation>Geen submap aanmaken</translation>
     </message>
 </context>
@@ -3647,4 +3657,7 @@ Ondersteunt de formaten:  S01E01, 1x1, 2017.12.31 en 31.12.2017 (datumformaten o
         <translation>Ongelezen</translation>
     </message>
 </context>
+<context>
+    <name>ExecutionLogWidget</name>
+    </context>
 </TS>

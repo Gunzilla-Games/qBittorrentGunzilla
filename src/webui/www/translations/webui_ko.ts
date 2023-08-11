@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ko">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="ko">
 <context>
     <name>AboutDlg</name>
     <message>
@@ -39,7 +37,7 @@
         <translation>하위폴더 만들기</translation>
     </message>
     <message>
-        <source>Don't create subfolder</source>
+        <source>Don&apos;t create subfolder</source>
         <translation>하위폴더 만들지 않기</translation>
     </message>
     <message>
@@ -52,19 +50,19 @@
     </message>
     <message>
         <source>Metadata received</source>
-        <translation type="unfinished" />
+        <translation>수신된 메타데이터</translation>
     </message>
     <message>
         <source>Files checked</source>
-        <translation type="unfinished" />
+        <translation>파일 확인됨</translation>
     </message>
     <message>
         <source>Stop condition:</source>
-        <translation type="unfinished" />
+        <translation>중지 조건:</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished" />
+        <translation>없음</translation>
     </message>
 </context>
 <context>
@@ -605,11 +603,11 @@
     </message>
     <message>
         <source>Would you like to resume all torrents?</source>
-        <translation type="unfinished" />
+        <translation>모든 토렌트를 이어받기하시겠습니까?</translation>
     </message>
     <message>
         <source>Would you like to pause all torrents?</source>
-        <translation type="unfinished" />
+        <translation>모든 토렌트를 일시 정지하시겠습니까?</translation>
     </message>
 </context>
 <context>
@@ -783,10 +781,6 @@
         <translation>유형:</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation>(없음)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -809,10 +803,6 @@
     <message>
         <source>Use proxy for peer connections</source>
         <translation>피어 연결에 프록시 사용하기</translation>
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation>토렌트에 프록시만 사용하기</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -989,8 +979,8 @@
         <translation>%T: 현재 트래커</translation>
     </message>
     <message>
-        <source>Tip: Encapsulate parameter with quotation marks to avoid text being cut off at whitespace (e.g., "%N")</source>
-        <translation>팁: 텍스트가 공백때문에 잘리지 않게 하려면 변수를 따옴표로 감싸세요 (예, "%N")</translation>
+        <source>Tip: Encapsulate parameter with quotation marks to avoid text being cut off at whitespace (e.g., &quot;%N&quot;)</source>
+        <translation>팁: 텍스트가 공백때문에 잘리지 않게 하려면 변수를 따옴표로 감싸세요 (예, &quot;%N&quot;)</translation>
     </message>
     <message>
         <source>The Web UI username must be at least 3 characters long.</source>
@@ -1018,7 +1008,7 @@
     </message>
     <message>
         <source>Delete .torrent files afterwards</source>
-        <translation>다운로드 후 .torrent 파일 삭제하기</translation>
+        <translation>내려받은 후 .torrent 파일 삭제하기</translation>
     </message>
     <message>
         <source>Download rate threshold:</source>
@@ -1445,7 +1435,7 @@
         <translation>원본</translation>
     </message>
     <message>
-        <source>Don't create subfolder</source>
+        <source>Don&apos;t create subfolder</source>
         <translation>하위폴더 만들지 않기</translation>
     </message>
     <message>
@@ -1593,12 +1583,12 @@
 In order to defend against DNS rebinding attack,
 you should put in domain names used by WebUI server.
 
-Use ';' to split multiple entries. Can use wildcard '*'.</source>
+Use &apos;;&apos; to split multiple entries. Can use wildcard &apos;*&apos;.</source>
         <translation>HTTP 호스트 헤더 필터링에 대한 허용 목록입니다.
 DNS 재결합 공격을 방어하기 위해
 웹 UI 서버가 사용하는 도메인 이름을 넣어야 합니다.
 
-';'를 사용해서 항목을 구분하며 와일드카드 '*'를 사용할 수 있습니다.</translation>
+&apos;;&apos;를 사용해서 항목을 구분하며 와일드카드 &apos;*&apos;를 사용할 수 있습니다.</translation>
     </message>
     <message>
         <source>Run external program on torrent added</source>
@@ -1609,8 +1599,8 @@ DNS 재결합 공격을 방어하기 위해
         <translation>HTTPS 인증서는 비워둘 수 없습니다</translation>
     </message>
     <message>
-        <source>Specify reverse proxy IPs (or subnets, e.g. 0.0.0.0/24) in order to use forwarded client address (X-Forwarded-For header). Use ';' to split multiple entries.</source>
-        <translation>전달된 클라이언트 주소(X-Forwarded-헤더의 경우)를 사용하려면 역방향 프록시 IP(또는 서브넷, 예: 0.0.0.0/24)를 지정합니다. 여러 항목을 분할하려면 ';'를 사용하십시오.</translation>
+        <source>Specify reverse proxy IPs (or subnets, e.g. 0.0.0.0/24) in order to use forwarded client address (X-Forwarded-For header). Use &apos;;&apos; to split multiple entries.</source>
+        <translation>전달된 클라이언트 주소(X-Forwarded-헤더의 경우)를 사용하려면 역방향 프록시 IP(또는 서브넷, 예: 0.0.0.0/24)를 지정합니다. 여러 항목을 분할하려면 &apos;;&apos;를 사용하십시오.</translation>
     </message>
     <message>
         <source>HTTPS key should not be empty</source>
@@ -1622,35 +1612,55 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Files checked</source>
-        <translation type="unfinished" />
+        <translation>파일 확인됨</translation>
     </message>
     <message>
         <source>Enable port forwarding for embedded tracker:</source>
-        <translation type="unfinished" />
+        <translation>임베디드 트래커에 대한 포트 포워딩 활성화</translation>
     </message>
     <message>
         <source>If checked, hostname lookups are done via the proxy.</source>
-        <translation type="unfinished" />
+        <translation>이 옵션을 선택하면, 프록시를 통해 호스트 이름 검색이 수행됩니다.</translation>
     </message>
     <message>
         <source>Use proxy for hostname lookup</source>
-        <translation type="unfinished" />
+        <translation>호스트 이름 조회에 프록시 사용하기</translation>
     </message>
     <message>
         <source>Metadata received</source>
-        <translation type="unfinished" />
+        <translation>수신된 메타데이터</translation>
     </message>
     <message>
         <source>Torrent stop condition:</source>
-        <translation type="unfinished" />
+        <translation>토렌트 중지 조건:</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished" />
+        <translation>없음</translation>
     </message>
     <message>
         <source>Example: 172.17.32.0/24, fdff:ffff:c8::/40</source>
-        <translation type="unfinished" />
+        <translation>예시: 172.17.32.0/24, fdff:ffff:c8::/40</translation>
+    </message>
+    <message>
+        <source>SQLite database (experimental)</source>
+        <translation>SQLite 데이터베이스 (실험적)</translation>
+    </message>
+    <message>
+        <source>Resume data storage type (requires restart):</source>
+        <translation>이어받기 데이터 저장소 유형 (재시작 필요):</translation>
+    </message>
+    <message>
+        <source>Fastresume files</source>
+        <translation>Fastresume 파일</translation>
+    </message>
+    <message>
+        <source>(None)</source>
+        <translation>(없음)</translation>
+    </message>
+    <message>
+        <source>Use proxy only for torrents</source>
+        <translation>토렌트에 프록시만 사용하기</translation>
     </message>
 </context>
 <context>
@@ -1684,7 +1694,7 @@ DNS 재결합 공격을 방어하기 위해
     <message>
         <source>Down Speed</source>
         <comment>i.e: Download speed</comment>
-        <translation>다운로드 속도</translation>
+        <translation>받기 속도</translation>
     </message>
     <message>
         <source>Up Speed</source>
@@ -1733,7 +1743,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Peer ID Client</source>
-        <translation type="unfinished" />
+        <translation>피어 ID 클라이언트</translation>
     </message>
 </context>
 <context>
@@ -2211,7 +2221,7 @@ DNS 재결합 공격을 방어하기 위해
     <message>
         <source>Down Speed</source>
         <comment>i.e: Download speed</comment>
-        <translation>다운로드 속도</translation>
+        <translation>받기 속도</translation>
     </message>
     <message>
         <source>Up Speed</source>
@@ -2253,7 +2263,7 @@ DNS 재결합 공격을 방어하기 위해
     <message>
         <source>Down Limit</source>
         <comment>i.e: Download limit</comment>
-        <translation>다운로드 제한</translation>
+        <translation>받기 제한</translation>
     </message>
     <message>
         <source>Up Limit</source>
@@ -2760,7 +2770,7 @@ DNS 재결합 공격을 방어하기 위해
     <name>confirmDeletionDlg</name>
     <message>
         <source>Also permanently delete the files</source>
-        <translation>영구적으로 파일도 삭제하기</translation>
+        <translation>또한 파일을 영구적으로 삭제합니다</translation>
     </message>
     <message>
         <source>Remove torrent(s)</source>
@@ -2959,11 +2969,11 @@ DNS 재결합 공격을 방어하기 위해
         <translation>표시</translation>
     </message>
     <message>
-        <source>Click the "Search plugins..." button at the bottom right of the window to install some.</source>
-        <translation>일부를 설치하려면 창의 오른쪽 하단에 있는 "플러그인 검색..." 버튼을 클릭하십시오.</translation>
+        <source>Click the &quot;Search plugins...&quot; button at the bottom right of the window to install some.</source>
+        <translation>일부를 설치하려면 창의 오른쪽 하단에 있는 &quot;플러그인 검색...&quot; 버튼을 클릭하십시오.</translation>
     </message>
     <message>
-        <source>There aren't any search plugins installed.</source>
+        <source>There aren&apos;t any search plugins installed.</source>
         <translation>설치된 검색 플러그인이 없습니다.</translation>
     </message>
 </context>
@@ -2994,7 +3004,7 @@ DNS 재결합 공격을 방어하기 위해
         <translation>활성화됨</translation>
     </message>
     <message>
-        <source>Warning: Be sure to comply with your country's copyright laws when downloading torrents from any of these search engines.</source>
+        <source>Warning: Be sure to comply with your country&apos;s copyright laws when downloading torrents from any of these search engines.</source>
         <translation>경고: 검색 엔진으로 토렌트를 내려받기할 때는 해당 국가의 저작권법을 준수해야 합니다.</translation>
     </message>
     <message>
@@ -3301,7 +3311,7 @@ DNS 재결합 공격을 방어하기 위해
     </message>
     <message>
         <source>Mark items read</source>
-        <translation>읽은 것으로 표시</translation>
+        <translation>읽은 항목들 표시</translation>
     </message>
     <message>
         <source>Update all feeds</source>
@@ -3609,7 +3619,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
         <translation>원본</translation>
     </message>
     <message>
-        <source>Don't create subfolder</source>
+        <source>Don&apos;t create subfolder</source>
         <translation>하위폴더 만들지 않기</translation>
     </message>
 </context>
@@ -3647,4 +3657,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
         <translation>읽지 않음</translation>
     </message>
 </context>
+<context>
+    <name>ExecutionLogWidget</name>
+    </context>
 </TS>

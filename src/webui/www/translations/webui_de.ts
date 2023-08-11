@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="de">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="de">
 <context>
     <name>AboutDlg</name>
     <message>
@@ -39,7 +37,7 @@
         <translation>Erstelle Unterordner</translation>
     </message>
     <message>
-        <source>Don't create subfolder</source>
+        <source>Don&apos;t create subfolder</source>
         <translation>Erstelle keinen Unterordner</translation>
     </message>
     <message>
@@ -52,19 +50,19 @@
     </message>
     <message>
         <source>Metadata received</source>
-        <translation type="unfinished" />
+        <translation>Metadaten erhalten</translation>
     </message>
     <message>
         <source>Files checked</source>
-        <translation type="unfinished" />
+        <translation>Dateien überprüft</translation>
     </message>
     <message>
         <source>Stop condition:</source>
-        <translation type="unfinished" />
+        <translation>Bedingung für das Anhalten:</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished" />
+        <translation>Kein</translation>
     </message>
 </context>
 <context>
@@ -605,11 +603,11 @@
     </message>
     <message>
         <source>Would you like to resume all torrents?</source>
-        <translation type="unfinished" />
+        <translation>Sollen alle Torrents fortgesetzt werden?</translation>
     </message>
     <message>
         <source>Would you like to pause all torrents?</source>
-        <translation type="unfinished" />
+        <translation>Sollen alle Torrents angehalten werden?</translation>
     </message>
 </context>
 <context>
@@ -783,10 +781,6 @@
         <translation>Typ:</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation>(Keiner)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -809,10 +803,6 @@
     <message>
         <source>Use proxy for peer connections</source>
         <translation>Proxy für Peer-Verbindungen verwenden</translation>
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation>Proxy nur für Torrents verwenden</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -989,8 +979,8 @@
         <translation>%T: aktueller Tracker</translation>
     </message>
     <message>
-        <source>Tip: Encapsulate parameter with quotation marks to avoid text being cut off at whitespace (e.g., "%N")</source>
-        <translation>Tipp: Setze Parameter zwischen Anführungszeichen damit Text bei Leerzeichen nicht abgeschnitten wird (z.B. "%N").</translation>
+        <source>Tip: Encapsulate parameter with quotation marks to avoid text being cut off at whitespace (e.g., &quot;%N&quot;)</source>
+        <translation>Tipp: Setze Parameter zwischen Anführungszeichen damit Text bei Leerzeichen nicht abgeschnitten wird (z.B. &quot;%N&quot;).</translation>
     </message>
     <message>
         <source>The Web UI username must be at least 3 characters long.</source>
@@ -1445,7 +1435,7 @@
         <translation>Original</translation>
     </message>
     <message>
-        <source>Don't create subfolder</source>
+        <source>Don&apos;t create subfolder</source>
         <translation>Erstelle keinen Unterordner</translation>
     </message>
     <message>
@@ -1478,11 +1468,11 @@
     </message>
     <message>
         <source>%J: Info hash v2</source>
-        <translation>%J: Info-Hash V2</translation>
+        <translation>%J: Info-Hash v2</translation>
     </message>
     <message>
         <source>%I: Info hash v1</source>
-        <translation>%I: Info-Hash V1</translation>
+        <translation>%I: Info-Hash v1</translation>
     </message>
     <message>
         <source>IP address reported to trackers (requires restart):</source>
@@ -1593,14 +1583,14 @@
 In order to defend against DNS rebinding attack,
 you should put in domain names used by WebUI server.
 
-Use ';' to split multiple entries. Can use wildcard '*'.</source>
+Use &apos;;&apos; to split multiple entries. Can use wildcard &apos;*&apos;.</source>
         <translation>Liste der erlaubten HTTP-Host Header-Felder.
 Um sich vor DNS-Rebinding-Attacken zu schützen,
 sollten hier Domain-Namen eingetragen weden,
 die vom WebUI-Server verwendet werden.
 
-Verwende ';' um mehrere Einträge zu trennen.
-Platzhalter '*' kann verwendet werden.</translation>
+Verwende &apos;;&apos; um mehrere Einträge zu trennen.
+Platzhalter &apos;*&apos; kann verwendet werden.</translation>
     </message>
     <message>
         <source>Run external program on torrent added</source>
@@ -1611,8 +1601,8 @@ Platzhalter '*' kann verwendet werden.</translation>
         <translation>Das HTTPS-Zertifkat sollte nicht leer sein</translation>
     </message>
     <message>
-        <source>Specify reverse proxy IPs (or subnets, e.g. 0.0.0.0/24) in order to use forwarded client address (X-Forwarded-For header). Use ';' to split multiple entries.</source>
-        <translation>Geben Sie Reverse-Proxy-IPs an (oder Subnetze, z.B. 0.0.0.0/24), um weitergeleitete Client-Adressen zu verwenden (Attribut X-Forwarded-For), verwenden Sie ';' um mehrere Einträge aufzuteilen.</translation>
+        <source>Specify reverse proxy IPs (or subnets, e.g. 0.0.0.0/24) in order to use forwarded client address (X-Forwarded-For header). Use &apos;;&apos; to split multiple entries.</source>
+        <translation>Geben Sie Reverse-Proxy-IPs an (oder Subnetze, z.B. 0.0.0.0/24), um weitergeleitete Client-Adressen zu verwenden (Attribut X-Forwarded-For), verwenden Sie &apos;;&apos; um mehrere Einträge aufzuteilen.</translation>
     </message>
     <message>
         <source>HTTPS key should not be empty</source>
@@ -1624,35 +1614,55 @@ Platzhalter '*' kann verwendet werden.</translation>
     </message>
     <message>
         <source>Files checked</source>
-        <translation type="unfinished" />
+        <translation>Dateien überprüft</translation>
     </message>
     <message>
         <source>Enable port forwarding for embedded tracker:</source>
-        <translation type="unfinished" />
+        <translation>Portweiterleitung für eingebetteten Tracker aktivieren:</translation>
     </message>
     <message>
         <source>If checked, hostname lookups are done via the proxy.</source>
-        <translation type="unfinished" />
+        <translation>Wenn diese Option aktiviert ist, erfolgt die Suche nach Hostnamen über den Proxy.</translation>
     </message>
     <message>
         <source>Use proxy for hostname lookup</source>
-        <translation type="unfinished" />
+        <translation>Proxy for die Suche nach Hostnamen verwenden</translation>
     </message>
     <message>
         <source>Metadata received</source>
-        <translation type="unfinished" />
+        <translation>Metadaten erhalten</translation>
     </message>
     <message>
         <source>Torrent stop condition:</source>
-        <translation type="unfinished" />
+        <translation>Bedingung für das Anhalten des Torrents:</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished" />
+        <translation>Kein</translation>
     </message>
     <message>
         <source>Example: 172.17.32.0/24, fdff:ffff:c8::/40</source>
-        <translation type="unfinished" />
+        <translation>Beispiel: 172.17.32.0/24, fdff:ffff:c8::/40</translation>
+    </message>
+    <message>
+        <source>SQLite database (experimental)</source>
+        <translation>SQLite-Datenbank (experimentell)</translation>
+    </message>
+    <message>
+        <source>Resume data storage type (requires restart):</source>
+        <translation>Speichertyp der Fortsetzungsdaten (Programmneustart erforderlich):</translation>
+    </message>
+    <message>
+        <source>Fastresume files</source>
+        <translation>Fastresume Dateien</translation>
+    </message>
+    <message>
+        <source>(None)</source>
+        <translation>(Keiner)</translation>
+    </message>
+    <message>
+        <source>Use proxy only for torrents</source>
+        <translation>Proxy nur für Torrents verwenden</translation>
     </message>
 </context>
 <context>
@@ -1735,7 +1745,7 @@ Platzhalter '*' kann verwendet werden.</translation>
     </message>
     <message>
         <source>Peer ID Client</source>
-        <translation type="unfinished" />
+        <translation>Peer-ID-Client</translation>
     </message>
 </context>
 <context>
@@ -1944,11 +1954,11 @@ Platzhalter '*' kann verwendet werden.</translation>
     </message>
     <message>
         <source>Info Hash v2:</source>
-        <translation>Info-Hash V2:</translation>
+        <translation>Info-Hash v2:</translation>
     </message>
     <message>
         <source>Info Hash v1:</source>
-        <translation>Info-Hash V1:</translation>
+        <translation>Info-Hash v1:</translation>
     </message>
     <message>
         <source>N/A</source>
@@ -2709,11 +2719,11 @@ Platzhalter '*' kann verwendet werden.</translation>
     </message>
     <message>
         <source>Info hash v1</source>
-        <translation>Info-Hash V1</translation>
+        <translation>Info-Hash v1</translation>
     </message>
     <message>
         <source>Info hash v2</source>
-        <translation>Info-Hash V2</translation>
+        <translation>Info-Hash v2</translation>
     </message>
     <message>
         <source>Torrent ID</source>
@@ -2961,11 +2971,11 @@ Platzhalter '*' kann verwendet werden.</translation>
         <translation>angezeigt</translation>
     </message>
     <message>
-        <source>Click the "Search plugins..." button at the bottom right of the window to install some.</source>
-        <translation>Klicke den "Such-Plugins ..."-Knopf unten rechts um welche zu installieren.</translation>
+        <source>Click the &quot;Search plugins...&quot; button at the bottom right of the window to install some.</source>
+        <translation>Klicke den &quot;Such-Plugins ...&quot;-Knopf unten rechts um welche zu installieren.</translation>
     </message>
     <message>
-        <source>There aren't any search plugins installed.</source>
+        <source>There aren&apos;t any search plugins installed.</source>
         <translation>Es sind keine Such-Plugins installiert.</translation>
     </message>
 </context>
@@ -2996,7 +3006,7 @@ Platzhalter '*' kann verwendet werden.</translation>
         <translation>Aktiviert</translation>
     </message>
     <message>
-        <source>Warning: Be sure to comply with your country's copyright laws when downloading torrents from any of these search engines.</source>
+        <source>Warning: Be sure to comply with your country&apos;s copyright laws when downloading torrents from any of these search engines.</source>
         <translation>Warnung: Achten Sie darauf, die Urheberrechtsgesetze Ihres Landes zu befolgen, wenn Sie von einer dieser Suchmaschinen Torrents herunterladen.</translation>
     </message>
     <message>
@@ -3611,7 +3621,7 @@ Er unterstützt die Formate: S01E01, 1x1, 2017.12.31 und 31.12.2017 (Datums-Form
         <translation>Original</translation>
     </message>
     <message>
-        <source>Don't create subfolder</source>
+        <source>Don&apos;t create subfolder</source>
         <translation>Erstelle keinen Unterordner</translation>
     </message>
 </context>
@@ -3649,4 +3659,7 @@ Er unterstützt die Formate: S01E01, 1x1, 2017.12.31 und 31.12.2017 (Datums-Form
         <translation>Ungelesen</translation>
     </message>
 </context>
+<context>
+    <name>ExecutionLogWidget</name>
+    </context>
 </TS>

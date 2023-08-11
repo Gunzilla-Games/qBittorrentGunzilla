@@ -1,6 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2015, 2018  Vladimir Golovnev <glassez@yandex.ru>
+ * Copyright (C) 2015-2022  Vladimir Golovnev <glassez@yandex.ru>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -48,6 +48,7 @@
 #include "base/utils/fs.h"
 #include "base/utils/io.h"
 #include "base/utils/string.h"
+#include "common.h"
 #include "infohash.h"
 #include "loadtorrentparams.h"
 
@@ -91,7 +92,7 @@ namespace
 
 BitTorrent::BencodeResumeDataStorage::BencodeResumeDataStorage(const Path &path, QObject *parent)
     : ResumeDataStorage(path, parent)
-    , m_ioThread {new QThread(this)}
+    , m_ioThread {new QThread}
     , m_asyncWorker {new Worker(path)}
 {
     Q_ASSERT(path.isAbsolute());
@@ -117,15 +118,9 @@ BitTorrent::BencodeResumeDataStorage::BencodeResumeDataStorage(const Path &path,
 
     qDebug() << "Registered torrents count: " << m_registeredTorrents.size();
 
-    m_asyncWorker->moveToThread(m_ioThread);
-    connect(m_ioThread, &QThread::finished, m_asyncWorker, &QObject::deleteLater);
+    m_asyncWorker->moveToThread(m_ioThread.get());
+    connect(m_ioThread.get(), &QThread::finished, m_asyncWorker, &QObject::deleteLater);
     m_ioThread->start();
-}
-
-BitTorrent::BencodeResumeDataStorage::~BencodeResumeDataStorage()
-{
-    m_ioThread->quit();
-    m_ioThread->wait();
 }
 
 QVector<BitTorrent::TorrentID> BitTorrent::BencodeResumeDataStorage::registeredTorrents() const
@@ -202,7 +197,8 @@ void BitTorrent::BencodeResumeDataStorage::loadQueue(const Path &queueFilename)
 BitTorrent::LoadResumeDataResult BitTorrent::BencodeResumeDataStorage::loadTorrentResumeData(const QByteArray &data, const QByteArray &metadata) const
 {
     lt::error_code ec;
-    const lt::bdecode_node resumeDataRoot = lt::bdecode(data, ec);
+    const lt::bdecode_node resumeDataRoot = lt::bdecode(data, ec
+            , nullptr, BENCODE_DEPTH_LIMIT, BENCODE_TOKEN_LIMIT);
     if (ec)
         return nonstd::make_unexpected(tr("Cannot parse resume data: %1").arg(QString::fromStdString(ec.message())));
 
@@ -273,7 +269,8 @@ BitTorrent::LoadResumeDataResult BitTorrent::BencodeResumeDataStorage::loadTorre
 
     if (!metadata.isEmpty())
     {
-        const lt::bdecode_node torentInfoRoot = lt::bdecode(metadata, ec);
+        const lt::bdecode_node torentInfoRoot = lt::bdecode(metadata, ec
+                , nullptr, BENCODE_DEPTH_LIMIT, BENCODE_TOKEN_LIMIT);
         if (ec)
             return nonstd::make_unexpected(tr("Cannot parse torrent info: %1").arg(QString::fromStdString(ec.message())));
 

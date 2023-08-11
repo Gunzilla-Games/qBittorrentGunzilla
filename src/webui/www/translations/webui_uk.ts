@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="uk">
 <context>
     <name>AboutDlg</name>
     <message>
@@ -39,7 +37,7 @@
         <translation>Створити підтеку</translation>
     </message>
     <message>
-        <source>Don't create subfolder</source>
+        <source>Don&apos;t create subfolder</source>
         <translation>Не створювати підтеку</translation>
     </message>
     <message>
@@ -52,19 +50,19 @@
     </message>
     <message>
         <source>Metadata received</source>
-        <translation type="unfinished" />
+        <translation>Метадані отримано</translation>
     </message>
     <message>
         <source>Files checked</source>
-        <translation type="unfinished" />
+        <translation>Файли перевірено</translation>
     </message>
     <message>
         <source>Stop condition:</source>
-        <translation type="unfinished" />
+        <translation>Умови зупинки:</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished" />
+        <translation>Немає</translation>
     </message>
 </context>
 <context>
@@ -110,7 +108,7 @@
     </message>
     <message>
         <source>Remove torrents</source>
-        <translation type="unfinished" />
+        <translation>Вилучити торренти</translation>
     </message>
 </context>
 <context>
@@ -153,15 +151,15 @@
     </message>
     <message>
         <source>Maximum number of connections limit must be greater than 0 or disabled.</source>
-        <translation>Максимальна кількість з'єднань повинна бути більша 0 або відсутня.</translation>
+        <translation>Максимальна кількість з&apos;єднань повинна бути більша 0 або відсутня.</translation>
     </message>
     <message>
         <source>Maximum number of connections per torrent limit must be greater than 0 or disabled.</source>
-        <translation>Максимальна кількість з'єднань на торрент повинна бути більша 0 або відсутня.</translation>
+        <translation>Максимальна кількість з&apos;єднань на торрент повинна бути більша 0 або відсутня.</translation>
     </message>
     <message>
         <source>Maximum number of upload slots per torrent limit must be greater than 0 or disabled.</source>
-        <translation>Максимальна кількість з'єднань для відвантаження на торрент повинна бути більша 0 або відсутня.</translation>
+        <translation>Максимальна кількість з&apos;єднань для відвантаження на торрент повинна бути більша 0 або відсутня.</translation>
     </message>
     <message>
         <source>Unable to save program preferences, qBittorrent is probably unreachable.</source>
@@ -193,7 +191,7 @@
     </message>
     <message>
         <source>Username</source>
-        <translation>Ім'я користувача</translation>
+        <translation>Ім&apos;я користувача</translation>
     </message>
     <message>
         <source>Password</source>
@@ -271,7 +269,7 @@
     <message>
         <source>Friday</source>
         <comment>Schedule the use of alternative rate limits on ...</comment>
-        <translation>П'ятниця</translation>
+        <translation>П&apos;ятниця</translation>
     </message>
     <message>
         <source>Saturday</source>
@@ -377,7 +375,7 @@
     </message>
     <message>
         <source>The port used for incoming connections must be between 0 and 65535.</source>
-        <translation>Порт для вхідних з'єднань повинен бути між 0 та 65535.</translation>
+        <translation>Порт для вхідних з&apos;єднань повинен бути між 0 та 65535.</translation>
     </message>
     <message>
         <source>Original author</source>
@@ -385,7 +383,7 @@
     </message>
     <message>
         <source>Are you sure you want to remove the selected torrents from the transfer list?</source>
-        <translation type="unfinished" />
+        <translation>Ви впевнені, що хочете видалити вибрані торренти зі списку передачі?</translation>
     </message>
 </context>
 <context>
@@ -553,11 +551,11 @@
     </message>
     <message>
         <source>Connection status: Firewalled</source>
-        <translation>Стан з'єднання: закрито брандмауером</translation>
+        <translation>Стан з&apos;єднання: закрито брандмауером</translation>
     </message>
     <message>
         <source>Connection status: Connected</source>
-        <translation>Стан з'єднання: підключено</translation>
+        <translation>Стан з&apos;єднання: підключено</translation>
     </message>
     <message>
         <source>Alternative speed limits: Off</source>
@@ -569,7 +567,7 @@
     </message>
     <message>
         <source>Connection status</source>
-        <translation>Статус з'єднання</translation>
+        <translation>Статус з&apos;єднання</translation>
     </message>
     <message>
         <source>Alternative speed limits: On</source>
@@ -581,7 +579,7 @@
     </message>
     <message>
         <source>Connection status: Disconnected</source>
-        <translation>Стан з'єднання: від'єднано</translation>
+        <translation>Стан з&apos;єднання: від&apos;єднано</translation>
     </message>
     <message>
         <source>RSS Reader</source>
@@ -597,19 +595,19 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished" />
+        <translation>Скасувати</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished" />
+        <translation>Вилучити</translation>
     </message>
     <message>
         <source>Would you like to resume all torrents?</source>
-        <translation type="unfinished" />
+        <translation>Бажаєте відновити всі торренти?</translation>
     </message>
     <message>
         <source>Would you like to pause all torrents?</source>
-        <translation type="unfinished" />
+        <translation>Хочете призупинити всі торренти?</translation>
     </message>
 </context>
 <context>
@@ -624,7 +622,7 @@
     </message>
     <message>
         <source>Connection</source>
-        <translation>З'єднання</translation>
+        <translation>З&apos;єднання</translation>
     </message>
     <message>
         <source>Speed</source>
@@ -684,7 +682,7 @@
     </message>
     <message>
         <source>Bypass authentication for clients on localhost</source>
-        <translation>Пропустити автентифікацію для клієнтів на цьому ж комп'ютері</translation>
+        <translation>Пропустити автентифікацію для клієнтів на цьому ж комп&apos;ютері</translation>
     </message>
     <message>
         <source>Bypass authentication for clients in whitelisted IP subnets</source>
@@ -724,7 +722,7 @@
     </message>
     <message>
         <source>This server requires a secure connection (SSL)</source>
-        <translation>Цей сервер вимагає безпечного з'єднання (SSL)</translation>
+        <translation>Цей сервер вимагає безпечного з&apos;єднання (SSL)</translation>
     </message>
     <message>
         <source>Authentication</source>
@@ -732,7 +730,7 @@
     </message>
     <message>
         <source>Username:</source>
-        <translation>Ім'я користувача:</translation>
+        <translation>Ім&apos;я користувача:</translation>
     </message>
     <message>
         <source>Password:</source>
@@ -744,11 +742,11 @@
     </message>
     <message>
         <source>Listening Port</source>
-        <translation>Порт для вхідних з'єднань</translation>
+        <translation>Порт для вхідних з&apos;єднань</translation>
     </message>
     <message>
         <source>Port used for incoming connections:</source>
-        <translation>Порт, який використовуватиметься для вхідних з'єднань:</translation>
+        <translation>Порт, який використовуватиметься для вхідних з&apos;єднань:</translation>
     </message>
     <message>
         <source>Use UPnP / NAT-PMP port forwarding from my router</source>
@@ -756,23 +754,23 @@
     </message>
     <message>
         <source>Connections Limits</source>
-        <translation>Обмеження з'єднань</translation>
+        <translation>Обмеження з&apos;єднань</translation>
     </message>
     <message>
         <source>Maximum number of connections per torrent:</source>
-        <translation>Максимальна кількість з'єднань на торрент:</translation>
+        <translation>Максимальна кількість з&apos;єднань на торрент:</translation>
     </message>
     <message>
         <source>Global maximum number of connections:</source>
-        <translation>Максимальна кількість з'єднань:</translation>
+        <translation>Максимальна кількість з&apos;єднань:</translation>
     </message>
     <message>
         <source>Maximum number of upload slots per torrent:</source>
-        <translation>Макс. з'єднань для відвантаження на торрент:</translation>
+        <translation>Макс. з&apos;єднань для відвантаження на торрент:</translation>
     </message>
     <message>
         <source>Global maximum number of upload slots:</source>
-        <translation>Максимальна кількість з'єднань для відвантаження:</translation>
+        <translation>Максимальна кількість з&apos;єднань для відвантаження:</translation>
     </message>
     <message>
         <source>Proxy Server</source>
@@ -781,10 +779,6 @@
     <message>
         <source>Type:</source>
         <translation>Тип:</translation>
-    </message>
-    <message>
-        <source>(None)</source>
-        <translation>(Немає)</translation>
     </message>
     <message>
         <source>SOCKS4</source>
@@ -808,11 +802,7 @@
     </message>
     <message>
         <source>Use proxy for peer connections</source>
-        <translation>Використовувати проксі для з'єднання з пірами</translation>
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation>Використовувати проксі лише для торрентів</translation>
+        <translation>Використовувати проксі для з&apos;єднання з пірами</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -989,12 +979,12 @@
         <translation>%T: Поточний трекер</translation>
     </message>
     <message>
-        <source>Tip: Encapsulate parameter with quotation marks to avoid text being cut off at whitespace (e.g., "%N")</source>
-        <translation>Порада: Обгорніть параметр лапками, щоб уникнути розділення тексту пробілами (наприклад, "%N")</translation>
+        <source>Tip: Encapsulate parameter with quotation marks to avoid text being cut off at whitespace (e.g., &quot;%N&quot;)</source>
+        <translation>Порада: Обгорніть параметр лапками, щоб уникнути розділення тексту пробілами (наприклад, &quot;%N&quot;)</translation>
     </message>
     <message>
         <source>The Web UI username must be at least 3 characters long.</source>
-        <translation>Ім'я користувача веб-інтерфейсу повинне містити хоча б 3 символи.</translation>
+        <translation>Ім&apos;я користувача веб-інтерфейсу повинне містити хоча б 3 символи.</translation>
     </message>
     <message>
         <source>The Web UI password must be at least 6 characters long.</source>
@@ -1150,7 +1140,7 @@
     </message>
     <message>
         <source>Outstanding memory when checking torrents:</source>
-        <translation>Накладна пам'ять при перевірці торрентів:</translation>
+        <translation>Накладна пам&apos;ять при перевірці торрентів:</translation>
     </message>
     <message>
         <source>Anti-leech</source>
@@ -1166,7 +1156,7 @@
     </message>
     <message>
         <source>Allow multiple connections from the same IP address:</source>
-        <translation>Дозволити декілька з'єднань з однієї IP-адреси:</translation>
+        <translation>Дозволити декілька з&apos;єднань з однієї IP-адреси:</translation>
     </message>
     <message>
         <source>File pool size:</source>
@@ -1350,7 +1340,7 @@
     </message>
     <message>
         <source>Coalesce reads &amp; writes (requires libtorrent &lt; 2.0):</source>
-        <translation>Об'єднувати операції читання і запису (потребує libtorrent &lt; 2.0):</translation>
+        <translation>Об&apos;єднувати операції читання і запису (потребує libtorrent &lt; 2.0):</translation>
     </message>
     <message>
         <source>Peer turnover threshold percentage:</source>
@@ -1402,7 +1392,7 @@
     </message>
     <message>
         <source>Optional IP address to bind to:</source>
-        <translation>Обрана IP-адреса для прив'язки:</translation>
+        <translation>Обрана IP-адреса для прив&apos;язки:</translation>
     </message>
     <message>
         <source>Disallow connection to peers on privileged ports:</source>
@@ -1445,7 +1435,7 @@
         <translation>Оригінал</translation>
     </message>
     <message>
-        <source>Don't create subfolder</source>
+        <source>Don&apos;t create subfolder</source>
         <translation>Не створювати підтеку</translation>
     </message>
     <message>
@@ -1454,7 +1444,7 @@
     </message>
     <message>
         <source>Outgoing connections per second:</source>
-        <translation>Вихідні з'єднання за секунду:</translation>
+        <translation>Вихідні з&apos;єднання за секунду:</translation>
     </message>
     <message>
         <source>Random</source>
@@ -1514,7 +1504,7 @@
     </message>
     <message>
         <source>Memory mapped files</source>
-        <translation>Файли, які відображаються у пам'ять</translation>
+        <translation>Файли, які відображаються у пам&apos;ять</translation>
     </message>
     <message>
         <source>Default</source>
@@ -1534,123 +1524,143 @@
     </message>
     <message>
         <source>Write-through (requires libtorrent &gt;= 2.0.6)</source>
-        <translation type="unfinished" />
+        <translation>Наскрізний запис (потрібен libtorrent &gt;= 2.0.6)</translation>
     </message>
     <message>
         <source>It controls the internal state update interval which in turn will affect UI updates</source>
-        <translation type="unfinished" />
+        <translation>Він контролює внутрішній інтервал оновлення стану, який, у свою чергу, впливатиме на оновлення інтерфейсу користувача</translation>
     </message>
     <message>
         <source>Disk IO read mode:</source>
-        <translation type="unfinished" />
+        <translation>Режим читання дискового Вводу-Виводу</translation>
     </message>
     <message>
         <source>Disable OS cache</source>
-        <translation type="unfinished" />
+        <translation>Вимкнути кеш ОС</translation>
     </message>
     <message>
         <source>Disk IO write mode:</source>
-        <translation type="unfinished" />
+        <translation>Режим запису дискового Вводу-Виводу</translation>
     </message>
     <message>
         <source>Use piece extent affinity:</source>
-        <translation type="unfinished" />
+        <translation>Використовувати групування споріднених частин</translation>
     </message>
     <message>
         <source>Max concurrent HTTP announces:</source>
-        <translation type="unfinished" />
+        <translation>Максимум одночасних анонсів HTTP</translation>
     </message>
     <message>
         <source>Enable OS cache</source>
-        <translation type="unfinished" />
+        <translation>Увімкнути кеш ОС</translation>
     </message>
     <message>
         <source>Refresh interval:</source>
-        <translation type="unfinished" />
+        <translation>Інтервал оновлення:</translation>
     </message>
     <message>
         <source>Physical memory (RAM) usage limit (applied if libtorrent &gt;= 2.0):</source>
-        <translation type="unfinished" />
+        <translation>Ліміт використання фізичної пам’яті (RAM) (застосовується, якщо libtorrent &gt;= 2.0):</translation>
     </message>
     <message>
         <source>ms</source>
-        <translation type="unfinished" />
+        <translation> мс</translation>
     </message>
     <message>
         <source>Excluded file names</source>
-        <translation type="unfinished" />
+        <translation>Виключені імена файлів</translation>
     </message>
     <message>
         <source>Support internationalized domain name (IDN):</source>
-        <translation type="unfinished" />
+        <translation>Підтримка інтернаціоналізації доменних імен (IDN)</translation>
     </message>
     <message>
         <source>Run external program on torrent finished</source>
-        <translation type="unfinished" />
+        <translation>Запуск зовнішньої програми на торренті завершено</translation>
     </message>
     <message>
         <source>Whitelist for filtering HTTP Host header values.
 In order to defend against DNS rebinding attack,
 you should put in domain names used by WebUI server.
 
-Use ';' to split multiple entries. Can use wildcard '*'.</source>
+Use &apos;;&apos; to split multiple entries. Can use wildcard &apos;*&apos;.</source>
         <translation>Список дозволених значень заголовку HTTP Host.
-Щоб захиститися від атаки DNS-переприв'язування, ви повинні
+Щоб захиститися від атаки DNS-переприв&apos;язування, ви повинні
 додати доменні імена, які використовуються сервером Веб-інтерфейсу.
 
-Використовуйте ';', щоб розділити кілька записів. Можна використовувати шаблон '*'.</translation>
+Використовуйте &apos;;&apos;, щоб розділити кілька записів. Можна використовувати шаблон &apos;*&apos;.</translation>
     </message>
     <message>
         <source>Run external program on torrent added</source>
-        <translation type="unfinished" />
+        <translation>Додано запуск зовнішньої програми на торрент</translation>
     </message>
     <message>
         <source>HTTPS certificate should not be empty</source>
-        <translation type="unfinished" />
+        <translation>Сертифікат HTTPS не повинен бути порожнім</translation>
     </message>
     <message>
-        <source>Specify reverse proxy IPs (or subnets, e.g. 0.0.0.0/24) in order to use forwarded client address (X-Forwarded-For header). Use ';' to split multiple entries.</source>
-        <translation type="unfinished" />
+        <source>Specify reverse proxy IPs (or subnets, e.g. 0.0.0.0/24) in order to use forwarded client address (X-Forwarded-For header). Use &apos;;&apos; to split multiple entries.</source>
+        <translation>Укажіть IP-адреси зворотного проксі-сервера (або підмережі, наприклад 0.0.0.0/24), щоб використовувати перенаправлену адресу клієнта (заголовок X-Forwarded-For). Використовуйте &apos;;&apos; щоб розділити кілька записів.</translation>
     </message>
     <message>
         <source>HTTPS key should not be empty</source>
-        <translation type="unfinished" />
+        <translation>Ключ HTTPS не повинен бути порожнім</translation>
     </message>
     <message>
         <source>Run external program</source>
-        <translation type="unfinished" />
+        <translation>Запускати зовнішню програму</translation>
     </message>
     <message>
         <source>Files checked</source>
-        <translation type="unfinished" />
+        <translation>Файли перевірено</translation>
     </message>
     <message>
         <source>Enable port forwarding for embedded tracker:</source>
-        <translation type="unfinished" />
+        <translation>Увімкнути переадресацію портів для вбудованого трекера</translation>
     </message>
     <message>
         <source>If checked, hostname lookups are done via the proxy.</source>
-        <translation type="unfinished" />
+        <translation>Якщо позначено, пошук імені хоста виконується через проксі.</translation>
     </message>
     <message>
         <source>Use proxy for hostname lookup</source>
-        <translation type="unfinished" />
+        <translation>Використовуйте проксі для пошуку імен хостів</translation>
     </message>
     <message>
         <source>Metadata received</source>
-        <translation type="unfinished" />
+        <translation>Метадані отримано</translation>
     </message>
     <message>
         <source>Torrent stop condition:</source>
-        <translation type="unfinished" />
+        <translation>Умови зупинки торрента:</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished" />
+        <translation>Жодного</translation>
     </message>
     <message>
         <source>Example: 172.17.32.0/24, fdff:ffff:c8::/40</source>
-        <translation type="unfinished" />
+        <translation>Приклад: 172.17.32.0/24, fdff:ffff:c8::/40</translation>
+    </message>
+    <message>
+        <source>SQLite database (experimental)</source>
+        <translation>База даних SQLite (експериментальна)</translation>
+    </message>
+    <message>
+        <source>Resume data storage type (requires restart):</source>
+        <translation>Відновити тип зберігання даних (потрібно перезапустити):</translation>
+    </message>
+    <message>
+        <source>Fastresume files</source>
+        <translation>Швидке відновлення файлів</translation>
+    </message>
+    <message>
+        <source>(None)</source>
+        <translation>(Немає)</translation>
+    </message>
+    <message>
+        <source>Use proxy only for torrents</source>
+        <translation>Використовувати проксі лише для торрентів</translation>
     </message>
 </context>
 <context>
@@ -1669,7 +1679,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Connection</source>
-        <translation>З'єднання</translation>
+        <translation>З&apos;єднання</translation>
     </message>
     <message>
         <source>Client</source>
@@ -1733,7 +1743,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Peer ID Client</source>
-        <translation type="unfinished" />
+        <translation>Peer ID Клієнт</translation>
     </message>
 </context>
 <context>
@@ -1838,7 +1848,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Connections:</source>
-        <translation>З'єднання:</translation>
+        <translation>З&apos;єднання:</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2015,7 +2025,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Connected peers:</source>
-        <translation>Під'єднані піри:</translation>
+        <translation>Під&apos;єднані піри:</translation>
     </message>
     <message>
         <source>All-time share ratio:</source>
@@ -2361,7 +2371,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Not contacted yet</source>
-        <translation>Ще не зв'язувався</translation>
+        <translation>Ще не зв&apos;язувався</translation>
     </message>
     <message>
         <source>N/A</source>
@@ -2429,7 +2439,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Add trackers...</source>
-        <translation type="unfinished" />
+        <translation>Додати трекери...</translation>
     </message>
 </context>
 <context>
@@ -2440,7 +2450,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Add trackers</source>
-        <translation type="unfinished" />
+        <translation>Додати трекери</translation>
     </message>
 </context>
 <context>
@@ -2723,7 +2733,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished" />
+        <translation>Вилучити</translation>
     </message>
 </context>
 <context>
@@ -2760,11 +2770,11 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     <name>confirmDeletionDlg</name>
     <message>
         <source>Also permanently delete the files</source>
-        <translation type="unfinished" />
+        <translation>Також остаточно видалити файли</translation>
     </message>
     <message>
         <source>Remove torrent(s)</source>
-        <translation type="unfinished" />
+        <translation>Видалити торрент(и)</translation>
     </message>
 </context>
 <context>
@@ -2959,12 +2969,12 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation>показ</translation>
     </message>
     <message>
-        <source>Click the "Search plugins..." button at the bottom right of the window to install some.</source>
-        <translation type="unfinished" />
+        <source>Click the &quot;Search plugins...&quot; button at the bottom right of the window to install some.</source>
+        <translation>Натисніть кнопку «Пошук плагінів...» у нижній правій частині вікна, щоб установити деякі з них.</translation>
     </message>
     <message>
-        <source>There aren't any search plugins installed.</source>
-        <translation type="unfinished" />
+        <source>There aren&apos;t any search plugins installed.</source>
+        <translation>Немає встановлених плагінів пошуку.</translation>
     </message>
 </context>
 <context>
@@ -2994,8 +3004,8 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation>Увімкнено</translation>
     </message>
     <message>
-        <source>Warning: Be sure to comply with your country's copyright laws when downloading torrents from any of these search engines.</source>
-        <translation>Попередження: Під час завантаження торрентів з будь-якої з цих пошукових систем, обов'язково дотримуйтесь законів про захист авторських прав у вашій країні.</translation>
+        <source>Warning: Be sure to comply with your country&apos;s copyright laws when downloading torrents from any of these search engines.</source>
+        <translation>Попередження: Під час завантаження торрентів з будь-якої з цих пошукових систем, обов&apos;язково дотримуйтесь законів про захист авторських прав у вашій країні.</translation>
     </message>
     <message>
         <source>Check for updates</source>
@@ -3115,7 +3125,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Remove torrents</source>
-        <translation type="unfinished" />
+        <translation>Вилучити торренти</translation>
     </message>
 </context>
 <context>
@@ -3432,7 +3442,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>| is used as OR operator</source>
-        <translation>| використовується як оператор "або"</translation>
+        <translation>| використовується як оператор &quot;або&quot;</translation>
     </message>
     <message>
         <source>Clear downloaded episodes</source>
@@ -3440,7 +3450,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Whitespaces count as AND operators (all words, any order)</source>
-        <translation>Пробіли вважаються операторами "і" (всі слова, у будь-якому порядку)</translation>
+        <translation>Пробіли вважаються операторами &quot;і&quot; (всі слова, у будь-якому порядку)</translation>
     </message>
     <message>
         <source>An expression with an empty %1 clause (e.g. %2)</source>
@@ -3508,7 +3518,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Episode number is a mandatory positive value</source>
-        <translation>Номер серії — обов'язкове додатне значення</translation>
+        <translation>Номер серії — обов&apos;язкове додатне значення</translation>
     </message>
     <message>
         <source> will match 2, 5, 8 through 15, 30 and onward episodes of season one</source>
@@ -3532,7 +3542,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
     </message>
     <message>
         <source>Season number is a mandatory non-zero value</source>
-        <translation>Номер сезону — обов'язкове ненульове значення</translation>
+        <translation>Номер сезону — обов&apos;язкове ненульове значення</translation>
     </message>
     <message>
         <source>Never</source>
@@ -3609,7 +3619,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
         <translation>Оригінал</translation>
     </message>
     <message>
-        <source>Don't create subfolder</source>
+        <source>Don&apos;t create subfolder</source>
         <translation>Не створювати підтеку</translation>
     </message>
 </context>
@@ -3633,7 +3643,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
     </message>
     <message>
         <source>Remove torrents</source>
-        <translation type="unfinished" />
+        <translation>Вилучити торренти</translation>
     </message>
 </context>
 <context>
@@ -3647,4 +3657,7 @@ Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also 
         <translation>Непрочитані</translation>
     </message>
 </context>
+<context>
+    <name>ExecutionLogWidget</name>
+    </context>
 </TS>

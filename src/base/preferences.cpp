@@ -599,11 +599,7 @@ void Preferences::setWebUiPort(const quint16 port)
 
 bool Preferences::useUPnPForWebUIPort() const
 {
-#ifdef DISABLE_GUI
-    return value(u"Preferences/WebUI/UseUPnP"_qs, true);
-#else
     return value(u"Preferences/WebUI/UseUPnP"_qs, false);
-#endif
 }
 
 void Preferences::setUPnPForWebUIPort(const bool enabled)
@@ -996,6 +992,18 @@ void Preferences::resolvePeerHostNames(const bool resolve)
     setValue(u"Preferences/Connection/ResolvePeerHostNames"_qs, resolve);
 }
 
+#if (defined(Q_OS_UNIX) && !defined(Q_OS_MACOS))
+bool Preferences::useSystemIcons() const
+{
+    return value(u"Preferences/Advanced/useSystemIconTheme"_qs, false);
+}
+
+void Preferences::useSystemIcons(const bool enabled)
+{
+    setValue(u"Preferences/Advanced/useSystemIconTheme"_qs, enabled);
+}
+#endif
+
 bool Preferences::isRecursiveDownloadEnabled() const
 {
     return !value(u"Preferences/Advanced/DisableRecursiveDownload"_qs, false);
@@ -1222,6 +1230,16 @@ bool Preferences::confirmRemoveAllTags() const
 void Preferences::setConfirmRemoveAllTags(const bool enabled)
 {
     setValue(u"Preferences/Advanced/confirmRemoveAllTags"_qs, enabled);
+}
+
+bool Preferences::confirmPauseAndResumeAll() const
+{
+    return value(u"GUI/ConfirmActions/PauseAndResumeAllTorrents"_qs, true);
+}
+
+void Preferences::setConfirmPauseAndResumeAll(const bool enabled)
+{
+    setValue(u"GUI/ConfirmActions/PauseAndResumeAllTorrents"_qs, enabled);
 }
 
 #ifndef Q_OS_MACOS
